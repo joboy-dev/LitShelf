@@ -6,7 +6,6 @@
 
 <!-- Styles -->
 <link rel="stylesheet" href="<?php echo '/frontend/styles/home/home.css'; ?>">
-<link rel="stylesheet" href="<?php echo '/frontend/styles/signup/signup.css'; ?>">
 
 <?php
     $styles = ob_get_clean();
