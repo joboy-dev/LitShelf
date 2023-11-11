@@ -2,6 +2,10 @@
     $baseUrl = 'http://localhost/LitShelf';
 ?>
 
+<?php
+$baseUrl = 'http://localhost/LitShelf'
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,9 +34,9 @@
 
             <!-- Nav Items -->
             <div class="nav-items">
-                <a class="nav-link <?php echo $pageTitle == 'Home' ? 'active' : '' ?>" href="/">Home</a>
+                <a class="nav-link <?php echo $pageTitle == 'Home' ? 'active' : '' ?>" href="<?php echo $baseUrl?>">Home</a>
                 <a class="nav-link <?php echo $pageTitle == 'Login' ? 'active' : '' ?>" href="LitShelf/login">Login</a>
-                <a class="nav-link <?php echo $pageTitle == 'Sign Up' ? 'active' : '' ?>" href="LitShelf/signup">Sign Up</a>
+                <a class="nav-link <?php echo $pageTitle == 'Sign Up' ? 'active' : '' ?>" href="<?php echo $baseUrl?>/signup">Sign Up</a>
             </div>
         </div>
     </nav>
