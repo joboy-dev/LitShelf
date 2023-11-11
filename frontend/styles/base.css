@@ -13,6 +13,7 @@
     box-sizing: border-box;
     transition: 0.3s ease-in;
     font-family: 'Montserrat', sans-serif;
+    scroll-behavior: smooth;
 }
 
 
