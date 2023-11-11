@@ -5,7 +5,7 @@
 ?>
 
 <!-- Styles -->
-<link rel="stylesheet" href="frontend/styles/index/index.css">
+<link rel="stylesheet" href="/frontend/styles/signup/signup.css">
 
 <?php
     $styles = ob_get_clean();
@@ -28,7 +28,7 @@
     </div>
 
     <div class="hero-img">
-        <img src="frontend/assets/images/home/home-hero.jpg" alt="hero-image">
+        <img src="/frontend/assets/images/home/home-hero.jpg" alt="hero-image">
     </div>
 </section>
 
