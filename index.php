@@ -6,7 +6,12 @@
 
     if ($path === '/LitShelf/signup') {
         include 'frontend/html/signup.php';
-    } else {
+        exit;
+    } else if ($path === "/" || $path === "") {
         include 'frontend/html/home.php';
+        exit;
+    } else {
+        echo "<h1>Page not Found</h1>";
+        exit;
     }
 ?>
