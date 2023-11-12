@@ -2,14 +2,14 @@
 <!-- HEADER -->
 <?php    
     // Import script to process sign up
-    require 'backend/authentication/signup.php'; 
+    require 'backend/user/signup.php'; 
 
     $pageTitle = 'Sign Up';
     ob_start();
 ?>
 
 <!-- Styles -->
-<link rel="stylesheet" href="/frontend/styles/signup-login.css">
+<link rel="stylesheet" href="/frontend/styles/form-section.css">
 <link rel="stylesheet" href="/frontend/styles/forms.css">
 
 <?php
@@ -25,10 +25,10 @@
 ?>
 
 <!-- Main Content -->
-<section id="signup-login">
+<section id="form-section">
     <!-- Display messages -->
     <?php
-        include 'backend/utils/display_message.php';
+        include 'utils/display_message.php';
         displayMessage();
     ?>
     
@@ -66,6 +66,8 @@
         <div class="submit">
             <input type="submit" name="submit" value="Sign Up">
         </div>
+
+        <p class="account-query">Already have an account? <span><a href="/login">Login</a></span></p>
     </form>
 </section>
 

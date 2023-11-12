@@ -24,14 +24,33 @@
 
 <!-- Main Content -->
 <section id="profile">
+    <!-- Display messages -->
+    <?php
+        include 'utils/display_message.php';
+        displayMessage();
+    ?>
+    
     <div class="hero-img">
         <img src="/frontend/assets/images/hero/profile-hero.jpg" alt="hero-image">
     </div>
 
     <div class="user-details">
-        <div class="title-container">
-            <h1 class="title">Profile</h1>
-            <div class="line"></div><br>
+        <div class="heading">
+            <div class="title-container">
+                <h1 class="title">Profile</h1>
+                <div class="line"></div><br>
+            </div>
+
+            <div class="settings-container">
+                <p class="settings">⚙️Settings</p>
+    
+                <div class="settings-links none">
+                    <a href="/edit-profile"> 📝 Edit Profile</a>
+                    <a href="/change-password">🔒 Change Password</a>
+                    <a href="#">👤 Change Profile Picture</a>
+                </div>
+            </div>
+
         </div>
 
         <div class="profile-picture">
@@ -47,10 +66,24 @@
             <h3>Email:</h3>
             <p><?php echo $_SESSION['email'] ?></p>
         </div>
-
-        <a href="#" class="button">Edit Profile</a>
     </div>
 </section>
+
+<script>
+    var settingsContainer = document.querySelector('.settings-container')
+    var allSettings = document.querySelector('.settings-links')
+
+    function openSettings() {
+        allSettings.classList.remove('none');
+    }
+
+    function closeSettings() {
+        allSettings.classList.add('none')
+    }
+
+    settingsContainer.addEventListener('mouseover', openSettings)
+    settingsContainer.addEventListener('mouseout', closeSettings)
+</script>
 
 <?php
     $content = ob_get_clean();

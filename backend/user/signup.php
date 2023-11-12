@@ -1,6 +1,6 @@
 <?php
-    require 'backend/conn.php';
-    include 'backend/utils/password_check.php';
+    require 'utils/conn.php';
+    include 'utils/password_check.php';
 
     $errorMessage = null;
     $successMessage = null;

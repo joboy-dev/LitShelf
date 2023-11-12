@@ -3,7 +3,7 @@
     $successMessage = null;
 
     if (isset($_POST['submit'])) {
-        require 'backend/conn.php';
+        require 'utils/conn.php';
 
         $email = htmlspecialchars($_POST['email']);
         $password = htmlspecialchars($_POST['password']);

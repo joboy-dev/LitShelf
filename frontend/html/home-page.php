@@ -23,7 +23,7 @@
 <section id="hero">
     <!-- Display messages -->
     <?php
-        include 'backend/utils/display_message.php';
+        include 'utils/display_message.php';
         displayMessage();
     ?>
     

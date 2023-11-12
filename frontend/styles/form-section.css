@@ -1,4 +1,4 @@
-#signup-login {
+#form-section {
     height: 100vh;
     padding: 0 200px 0 0;
     background-color: var(--secondary-color);
@@ -21,7 +21,7 @@
 
 /* TAB */
 @media screen and (max-width: 1024px) {
-    #signup-login {
+    #form-section {
         height: 120vh;
         flex-direction: column;
         padding: 0;
@@ -42,7 +42,7 @@
 
 /* MOBILE */
 @media screen and (max-width: 540px) {
-    #signup-login {
+    #form-section {
         height: 155vh;
         flex-direction: column;
         gap: 0;

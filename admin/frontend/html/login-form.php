@@ -1,14 +1,14 @@
 <!-- HEADER -->
 <?php
     // Import script to process login
-    require 'backend/authentication/login.php'; 
+    require 'backend/login.php'; 
     $pageTitle = 'Login';
     ob_start();
 ?>
 
 <!-- Styles -->
-<link rel="stylesheet" href="/frontend/styles/signup-login.css">
-<link rel="stylesheet" href="/frontend/styles/forms.css">
+<link rel="stylesheet" href="/admin/frontend/styles/form-section.css">
+<link rel="stylesheet" href="/admin/frontend/styles/forms.css">
 
 <?php
     $styles = ob_get_clean();
@@ -23,18 +23,14 @@
 ?>
 
 <!-- Main Content -->
-<section id="signup-login">
+<section id="form-section">
     <!-- Display messages -->
     <?php
-        include 'backend/utils/display_message.php';
+        include '../utils/display_message.php';
         displayMessage();
     ?>
 
-    <div class="hero-img">
-        <img src="/frontend/assets/images/hero/login-hero.jpg" alt="hero-image">
-    </div>
-
-    <form action="#" method="post">
+    <form action="" method="post">
         <div class="title-container">
             <h1 class="title">Login</h1>
             <div class="line"></div><br>
@@ -51,7 +47,7 @@
         </div>
 
         <div class="submit">
-            <input type="submit" name="submit" value="Login">
+            <input type="submit" name="submit" value="Login as Admin">
         </div>
     </form>
 

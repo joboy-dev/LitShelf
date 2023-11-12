@@ -101,6 +101,27 @@ CREATE TABLE IF NOT EXISTS `LitShelfDB`.`Return` (
 ENGINE = InnoDB;
 
 
+-- -----------------------------------------------------
+-- Table `LitShelfDB`.`Admin`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `LitShelfDB`.`Admin` (
+  `id` INT NOT NULL,
+  `name` VARCHAR(200) NULL DEFAULT 'litshelfadmin',
+  `email` VARCHAR(200) NULL DEFAULT 'litshelfadmin@gmail.com',
+  `password` VARCHAR(200) NULL DEFAULT 'litshelfadmin',
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB;
+
+
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+-- -----------------------------------------------
+-- -----------------------------------------------
+USE litshelfdb;
+
+-- --------------------------------------------------
+-- Set Up Admin
+-- --------------------------------------------------
+INSERT INTO admin(`name`, `email`, `password`) VALUES('litshelfadmin', 'litshelfadmin@gmail.com', 'litshelfadmin');
