@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS `LitShelfDB`.`User` (
   `name` VARCHAR(200) NOT NULL,
   `email` VARCHAR(200) NOT NULL,
   `password` VARCHAR(80) NOT NULL,
-  `profile_picture` VARCHAR(300) NULL,
+  `profile_picture` VARCHAR(300) NULL DEFAULT 'https://img.freepik.com/free-psd/3d-icon-social-media-app_23-2150049569.jpg?size=626&ext=jpg&ga=GA1.1.163047648.1692182630&semt=ais',
   PRIMARY KEY (`id`),
   UNIQUE INDEX `email_UNIQUE` (`email` ASC))
 ENGINE = InnoDB;
@@ -45,9 +45,10 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `LitShelfDB`.`Book` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `book_name` VARCHAR(200) NOT NULL,
+  `description` VARCHAR(3000) NULL DEFAULT 'No description available.',
   `genre` VARCHAR(200) NOT NULL,
   `quantity_available` INT NOT NULL,
-  `cover_picture` VARCHAR(300) NULL,
+  `cover_picture` VARCHAR(300) NULL DEFAULT 'https://img.freepik.com/free-photo/image-icon-front-side-white-background_187299-40166.jpg?size=626&ext=jpg&ga=GA1.1.163047648.1692182630&semt=ais',
   `author_id` INT NOT NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_author_id_idx` (`author_id` ASC),

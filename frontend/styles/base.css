@@ -1,9 +1,35 @@
+/* ANIMATIONS */
+@keyframes scaleOpacityAnimation {
+    0% {
+        scale: 0.7;
+        opacity: 0;
+    }
+
+    100% {
+        scale: 1;
+        opacity: 1;
+    }
+}
+
+@keyframes opacityAnimation {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+
 :root {
     --primary-color: rgb(39, 39, 39);
     --secondary-color: rgb(170, 88, 41);
     --tertiary-color: rgb(255, 255, 255, 0.85);
     --default-spacing: 20px 200px;
-    --default-section-spacing: 100px 200px 0 200px;
     --default-box-shadow: 0 2px 8px rgba(255, 255, 255, 0.2);
 }
 
@@ -13,12 +39,19 @@
     box-sizing: border-box;
     transition: 0.3s ease-in;
     font-family: 'Montserrat', sans-serif;
+    scroll-behavior: smooth;
 }
-
 
 html {
     font-size: 30px;
 }
+
+body {
+    position: relative;
+}
+
+
+/* BUTTON */
 
 .button {
     background-color: var(--primary-color);
@@ -34,6 +67,35 @@ html {
     box-shadow: var(--default-box-shadow); 
 }
 
+/* HERO IMAGE */
+
+.hero-img img {
+    object-fit: cover;
+    width: 100%;
+    height: 100vh;
+    animation: opacityAnimation 2s ease;
+}
+
+/* LINE */
+
+.title-container {
+    margin-top: 30px;
+    width: 100%;
+}
+
+.title-container .title {
+    color: var(--tertiary-color);
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.line {
+    height: 5px;
+    width: 10%;
+    background-color: var(--primary-color);
+    border-radius: 10px;
+}
+
 
 /* NAVBAR */
 
@@ -42,6 +104,7 @@ nav {
     padding: var(--default-spacing);
     position: fixed;
     width: 100%;
+    z-index: 1001;
 }
 
 nav .container {
@@ -79,7 +142,7 @@ a.active {
 }
 
 
-/* MAIN CONTENT */
+/* FOOTER */
 
 footer {
     padding: var(--default-spacing);
@@ -94,12 +157,89 @@ footer p {
 }
 
 
-/* HERO IMAGE */
+/* MESSAGES */
+.message {
+    position: absolute;
+    right: 200px;
+    top: 100px;
+    height: 50px;
+    min-width: 30%;
+    box-shadow: var(--default-box-shadow);
+    border-radius: 25px;
+    padding: 10px 20px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1002;
+}
 
-.hero-img img {
-    object-fit: cover;
-    width: 100%;
-    height: 100vh;
+.error {
+    background-color: rgb(230, 155, 155);
+    color: rgb(196, 65, 65);
+}
+
+.success {
+    background-color: rgb(124, 204, 124);
+    color: green;
+}
+
+
+
+
+/* ----------------------------------- MEDIA QUERIES -------------------------------- */
+/* ---------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------- */
+
+/* TAB */
+@media screen and (max-width: 1024px) {
+    :root {
+        --default-spacing: 20px 100px;
+    }
+
+    html {
+        font-size: 27px;
+    }
+
+    .logo img {
+        height: 30px;
+    }
+
+    .message {
+        position: absolute;
+        right: 100px;
+        height: 50px;
+        min-width: 40%;
+    }
+}
+
+
+/* ---------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------- */
+
+/* MOBILE */
+@media screen and (max-width: 540px) {
+    :root {
+        --default-spacing: 20px 50px;
+    }
+
+    html {
+        font-size: 25px;
+    }
+
+    .logo img {
+        height: 25px;
+    }
+
+    .message {
+        position: absolute;
+        height: 50px;
+        right: 0;
+        width: 100%;
+    }
 }
 
 
