@@ -1,0 +1,153 @@
+#hero {
+    height: 100vh;
+    padding: 100px 0 0 200px;
+    background-color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 40px;
+    overflow: hidden;
+}
+
+.hero-img {
+    width: 60%;
+}
+
+.hero-content {
+    width: 40%;
+    color: var(--tertiary-color);
+    animation: scaleOpacityAnimation 2s ease;
+}
+
+.hero-content h1 {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+.hero-content h3 {
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+
+/* FEATURES */
+#features {
+    background-color: var(--primary-color);
+    height: 70vh;
+    padding: 20px 200px 0 200px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.feature {
+    background-color: var(--secondary-color);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    padding: 40px 20px;
+    height: 65%;
+    width: 100%;
+    border-radius: 40px;
+    box-shadow: var(--default-box-shadow); 
+}
+
+.feature .icon {
+    font-size: 2rem;
+    margin-bottom: 10%;
+}
+
+.feature .feature-title {
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 5%;
+}
+
+.feature .description {
+    font-size: 0.6rem;
+    color: var(--tertiary-color);
+}
+
+
+/* ----------------------------------- MEDIA QUERIES -------------------------------- */
+/* ---------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------- */
+
+/* TAB */
+@media screen and (max-width: 1024px) {
+    #hero {
+        padding: 0;
+        background-color: var(--secondary-color);
+        flex-direction: column-reverse;
+        gap: 40px;
+        overflow: hidden;
+    }
+
+    .hero-img {
+        width: 100%;
+        height: 55%;
+        overflow: hidden;
+    }
+    
+    .hero-content {
+        width: 100%;
+        height: 30%;
+        color: var(--tertiary-color);
+        padding: var(--default-spacing);
+    }
+
+    #features {
+        height: 90vh;
+        padding: var(--default-spacing);
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .feature {
+        height: 80%;
+    }
+}
+
+
+/* ---------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------- */
+
+/* MOBILE */
+@media screen and (max-width: 540px) {
+    #hero {
+        padding: 0;
+        background-color: var(--secondary-color);
+        flex-direction: column-reverse;
+        gap: 20px;
+        overflow: hidden;
+    }
+
+    .hero-img {
+        width: 100%;
+        height: 50%;
+        overflow: hidden;
+    }
+    
+    .hero-content {
+        width: 100%;
+        height: 30%;
+        color: var(--tertiary-color);
+        padding: var(--default-spacing);
+    }
+
+    #features {
+        height: 120vh;
+        padding: var(--default-spacing);
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .feature {
+        height: 90%;
+    }
+}

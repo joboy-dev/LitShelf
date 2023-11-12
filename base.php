@@ -9,7 +9,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,400;1,500;1,600;1,700;1,900&display=swap" rel="stylesheet">
 
-    <!-- <link rel="stylesheet" href="frontend/assets/css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="/frontend/styles/base.css">
     <?php echo $styles ?>
 </head>
@@ -17,7 +16,7 @@
     <!-- NAVBAR -->
     <nav>
         <div class="container">
-            <a class="logo" href="/frontend/assets/images/logo.png"><img src="/frontend/assets/images/logo.png" alt="logo"></a>
+            <a class="logo" href="/"><img src="/frontend/assets/images/logo.png" alt="logo"></a>
 
             <!-- Burger icon -->
             <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,8 +26,16 @@
             <!-- Nav Items -->
             <div class="nav-items">
                 <a class="nav-link <?php echo $pageTitle == 'Home' ? 'active' : '' ?>" href="/">Home</a>
-                <a class="nav-link <?php echo $pageTitle == 'Login' ? 'active' : '' ?>" href="/LitShelf/login">Login</a>
-                <a class="nav-link <?php echo $pageTitle == 'Sign Up' ? 'active' : '' ?>" href="/LitShelf/signup">Sign Up</a>
+
+                <?php if(isset($_SESSION['user_id'])): ?>
+                    <a class="nav-link <?php echo $pageTitle == 'Library' ? 'active' : '' ?>" href="/library">Library</a>
+                    <a class="nav-link <?php echo $pageTitle == 'Borrowed Books' ? 'active' : '' ?>" href="/borrowed-books">Borrowed Books</a>
+                    <a class="nav-link <?php echo $pageTitle == 'Profile' ? 'active' : '' ?>" href="/profile">Profile</a>
+                    <a class="nav-link <?php echo $pageTitle == 'Logout' ? 'active' : '' ?>" href="/logout">Logout</a>
+                <?php else: ?>
+                    <a class="nav-link <?php echo $pageTitle == 'Login' ? 'active' : '' ?>" href="/login">Login</a>
+                    <a class="nav-link <?php echo $pageTitle == 'Sign Up' ? 'active' : '' ?>" href="/signup">Sign Up</a>
+                <?php endif ?>
             </div>
         </div>
     </nav>
@@ -41,7 +48,16 @@
     <footer>
         <p class="text-align-center">&copy; <?php echo date('Y'); ?> LitShelf</p>
     </footer>
+    
+    <!-- Script to close message displays after 5 seconds -->
+    <script>
+        var message = document.querySelector(".message");
 
-    <script src="/frontend/assets/js/bootstrap.min.js"></script>
+        function close() {
+            message.style.display = "none";
+        }
+
+        setTimeout(close, 5000);
+    </script>
 </body>
 </html>
