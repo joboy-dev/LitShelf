@@ -21,6 +21,19 @@
     }
 }
 
+@keyframes slideDownOpacityAnimation {
+    0% {
+        /* visibility: hidden; */
+        opacity: 0;
+        transform: translateY(-20px); /* Move element up initially */
+    }
+    100% {
+        /* visibility: visible; */
+        opacity: 1;
+        transform: translateY(0); /* Move element down to its original position */
+    }
+  }
+
 
 /* -------------------------------------------------------------------------- */
 /* -------------------------------------------------------------------------- */
@@ -107,12 +120,14 @@ nav {
     position: fixed;
     width: 100%;
     z-index: 1001;
+    box-shadow: var(--default-box-shadow);
 }
 
 nav .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
 } 
 
 .logo img {
@@ -141,6 +156,19 @@ a.active {
     color: var(--secondary-color);
     font-weight: bold;
     font-size: 0.65rem;
+}
+
+.navicon {
+    height: 30px;
+    width: 30px;
+}
+
+.menu-icon {
+    display: none;
+}
+
+.cancel-icon {
+    display: none;
 }
 
 
@@ -214,6 +242,36 @@ footer p {
         right: 100px;
         height: 50px;
         min-width: 40%;
+    }
+
+    /* NAVBAR */
+    nav .container {
+        flex-direction: column;
+        gap: 20px;
+        align-items: start;
+        justify-content: space-between;
+    } 
+    
+    .nav-items {
+        display: none;
+        flex-direction: column;
+        align-items: start;
+        justify-content: end;
+        gap: 20px;
+    }
+
+    .navicon {
+        cursor: pointer;
+        position: absolute;
+        right: 5%;
+    }
+    
+    .menu-icon {
+        display: block;
+    }
+
+    .cancel-icon {
+        display: none;
     }
 }
 

@@ -107,6 +107,7 @@ nav {
     position: fixed;
     width: 100%;
     z-index: 1001;
+    box-shadow: var(--default-box-shadow);
 }
 
 nav .container {

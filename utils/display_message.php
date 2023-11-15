@@ -13,7 +13,7 @@
         }
     
         if (isset($_SESSION['success'])) {
-            $message = $_SESSION['error'];
+            $message = $_SESSION['success'];
             
             echo "
                 <div class='message success'>

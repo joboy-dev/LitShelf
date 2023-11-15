@@ -16,12 +16,8 @@
     <!-- NAVBAR -->
     <nav>
         <div class="container">
+            <!-- Logo -->
             <a class="logo" href="/"><img src="/frontend/assets/images/logo.png" alt="logo"></a>
-
-            <!-- Burger icon -->
-            <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button> -->
 
             <!-- Nav Items -->
             <div class="nav-items">
@@ -36,7 +32,10 @@
                     <a class="nav-link <?php echo $pageTitle == 'Login' ? 'active' : '' ?>" href="/login">Login</a>
                     <a class="nav-link <?php echo $pageTitle == 'Sign Up' ? 'active' : '' ?>" href="/signup">Sign Up</a>
                 <?php endif ?>
+                
             </div>
+            <img src="/frontend//assets/icons/menu-icon.png" alt="menu-icon" class="navicon menu-icon">
+            <img src="/frontend//assets/icons/cancel-icon.png" alt="cancel-icon" class="navicon cancel-icon">
         </div>
     </nav>
 
@@ -58,6 +57,37 @@
         }
 
         setTimeout(close, 5000);
+    </script>
+
+    <!-- Script to open and close nav bar -->
+    <script>
+        var menuIcon = document.querySelector('.menu-icon');
+        var cancelIcon = document.querySelector('.cancel-icon');
+        var navItems =document.querySelector('.nav-items');
+        var main =document.querySelector('main');
+
+        function openNavbar() {
+            // toggle menu and cancel icons
+            menuIcon.style.display = 'none';
+            cancelIcon.style.display = 'block';
+
+            // open navbar
+            navItems.style.display = 'flex';
+        }
+
+        function closeNavbar() {
+            // toggle menu and cancel icons
+            menuIcon.style.display = 'block';
+            cancelIcon.style.display = 'none';
+
+            // close navbar
+            navItems.style.display = 'none';
+        }
+
+        menuIcon.addEventListener('click', openNavbar);
+        cancelIcon.addEventListener('click', closeNavbar);
+
+        main.addEventListener('click', closeNavbar)
     </script>
 </body>
 </html>

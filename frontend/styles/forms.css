@@ -33,11 +33,43 @@ form {
     box-shadow: 2px 2px 8px rgba(255, 255, 255, 0.4);
 }
 
+.form-field select {
+    width: 100%;
+    height: 60px;
+    border-radius: 30px;
+    border: none;
+    padding: 10px 30px;
+    background-color: rgb(255, 255, 255, 0.6);
+    color: var(--primary-color);
+    font-size: 0.6rem;
+}
+
+.form-field select:focus {
+    outline: none;
+    box-shadow: 2px 2px 8px rgba(255, 255, 255, 0.4);
+}
+
+.form-field option:checked {
+    background-color: var(--secondary-color);
+    color: var(--tertiary-color);
+}
+
 div.submit {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 20px;
+}
+
+.form-field input[type="file"] {
+    width: 100%;
+    height: 60px;
+    border-radius: 30px;
+    border: none;
+    padding: 10px 30px;
+    background-color: rgb(255, 255, 255, 0.6);
+    color: var(--primary-color);
+    font-size: 0.6rem;
 }
 
 input[type="submit"] {
@@ -73,6 +105,31 @@ input[type="submit"]:hover {
     text-decoration: underline;
 }
 
+/* FILTER FORM */
+.filter-form-container {
+    height: 100px;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+}
+
+form.filter-form {
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    gap: 40px;
+    width: 70%;
+    height: 120px;
+}
+
+form.filter-form .form-field{
+    width: 100%;
+}
+
+form.filter-form .submit{
+    width: 100%;
+}
+
 
 
 /* ----------------------------------- MEDIA QUERIES -------------------------------- */
@@ -89,6 +146,12 @@ input[type="submit"]:hover {
 
     form .title-container {
         width: 100%;
+    }
+
+    form.filter-form {
+        width: 100%;
+        gap: 10px;
+        padding: 0;
     }
 }
 

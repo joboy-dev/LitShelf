@@ -9,8 +9,9 @@
         $name = htmlspecialchars($_POST['name']);
         $email = htmlspecialchars($_POST['email']);
 
-        // Check if email already exists
-        $checkEmailQuery = "SELECT * FROM `user` WHERE `email` = '$email'";
+        // Check if email already exists for another user.
+        // So if the user chooses to change only their name and leave the email as is, there will be no issue.
+        $checkEmailQuery = "SELECT * FROM `user` WHERE `email` = '$email' AND `id` != '$id'";
         $result = mysqli_query($conn, $checkEmailQuery);
 
         if (mysqli_num_rows($result) > 0) {

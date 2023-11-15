@@ -29,6 +29,7 @@
                     <a class="nav-link <?php echo $pageTitle == 'Users' ? 'active' : '' ?>" href="/admin/users">Users</a>
                     <a class="nav-link <?php echo $pageTitle == 'Books' ? 'active' : '' ?>" href="/admin/books">Books</a>
                     <a class="nav-link <?php echo $pageTitle == 'Authors' ? 'active' : '' ?>" href="/admin/authors">Authors</a>
+                    <a class="nav-link <?php echo $pageTitle == 'Genres' ? 'active' : '' ?>" href="/admin/genres">Genres</a>
                     <a class="nav-link <?php echo $pageTitle == 'Borrowed' ? 'active' : '' ?>" href="admin//borrowed">Borrowed</a>
                     <a class="nav-link <?php echo $pageTitle == 'Logout' ? 'active' : '' ?>" href="/admin/logout">Logout</a>
                 <?php else: ?>

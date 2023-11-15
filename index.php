@@ -24,16 +24,33 @@
         protectRoute('frontend/html/forms/edit-profile-page.php');
     } else if ($path === "/change-password") {
         protectRoute('frontend/html/forms/change-password-page.php');
+    } else if ($path === "/change-profile-picture") {
+        protectRoute('frontend/html/forms/change-profile-picture-page.php');
     } else if ($path === "/" || $path === "") {
         include 'frontend/html/home-page.php';
         exit;
     } 
+
+    // LIBRARY
+    else if ($path === "/library") {
+        protectRoute('frontend/html/library/library-page.php');
+    }  elseif (preg_match('/\/library\/book\?id=\d+/', $path)) {
+        // The URL matches the expected pattern
+        protectRoute("frontend/html/library/book-detail-page.php");
+        exit;
+    } 
+
+    // BORROWED BOOKS
+
     // ADMIN PAGE
     else if ($path === "/admin") {
         include 'admin/index.php';
         exit;
-    } else {
-        echo "<h1>Page not Found</h1>";
+    } 
+    
+    // PAGE NOT FOUND
+    else {
+        include 'frontend/html/page-not-found-page.php';
         exit;
     }
 ?>

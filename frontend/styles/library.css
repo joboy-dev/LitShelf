@@ -1,0 +1,138 @@
+#library {
+    height: 130vh;
+    padding: 50px 0;
+    background-color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+    overflow: hidden;
+    gap: 50px;
+}
+
+#library .breadcrumb {
+    height: 20%;
+    width: 100%;
+    background-color: var(--primary-color);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    animation: scaleOpacityAnimation 2s ease;
+}
+
+.breadcrumb h1 {
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+    padding-bottom: 30px;
+}
+
+.breadcrumb p {
+    color: var(--tertiary-color);
+    font-size: 0.7rem;
+}
+
+.library-content {
+    padding: 0 200px;
+    height: 75%;
+    width: 100%;
+}
+
+.all-books {
+    height: 90%;
+    padding-top: 20px;
+    overflow: auto;
+}
+
+.all-books .book {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: var(--tertiary-color);
+    border-radius: 20px;
+    padding: 20px 40px;
+    margin-bottom: 20px;
+    font-size: 0.6rem;
+    box-shadow: var(--default-box-shadow);
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 50px;
+    animation: slideDownOpacityAnimation 2s ease;
+}
+
+.book b {
+    color: var(--secondary-color);
+    display: block;
+    margin-bottom: 10px;
+}
+
+.book p {
+    margin-bottom: 20px;
+}
+
+.book .details {
+    width: 100%;
+}
+
+.book .details a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 30px;
+}
+
+.book .details a:hover {
+    text-decoration: underline;
+}
+
+.book .picture {
+    height: 180px;
+    width: 150px;
+}
+
+.picture img  {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* ----------------------------------- MEDIA QUERIES -------------------------------- */
+/* ---------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------- */
+
+/* TAB */
+@media screen and (max-width: 1024px) {
+    #library {
+        gap: 20px;
+    }
+
+    .library-content {
+        padding: 0 50px;
+    }
+}
+
+
+/* ---------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------- */
+
+/* MOBILE */
+@media screen and (max-width: 540px) {
+    #library {
+        gap: 20px;
+    }
+
+    .library-content {
+        padding: 0 20px;
+    }
+
+    .book .picture {
+        display: none;
+    }
+}
+

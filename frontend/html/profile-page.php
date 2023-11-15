@@ -45,9 +45,9 @@
                 <p class="settings">⚙️Settings</p>
     
                 <div class="settings-links none">
-                    <a href="/edit-profile"> 📝 Edit Profile</a>
+                    <a href="/edit-profile">📝 Edit Profile</a>
                     <a href="/change-password">🔒 Change Password</a>
-                    <a href="#">👤 Change Profile Picture</a>
+                    <a href="/change-profile-picture">👤 Change Profile Picture</a>
                 </div>
             </div>
 

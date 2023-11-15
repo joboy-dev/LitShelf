@@ -1,8 +1,10 @@
 /* FORM STYLE */
 
 form {
-    width: 40%;
+    width: 30%;
     animation: scaleOpacityAnimation 2s ease;
+    overflow:-y auto;
+    overflow-x: hidden;
 }
 
 .form-field {
@@ -33,11 +35,63 @@ form {
     box-shadow: 2px 2px 8px rgba(255, 255, 255, 0.4);
 }
 
+
+.form-field select {
+    width: 100%;
+    height: 60px;
+    border-radius: 30px;
+    border: none;
+    padding: 10px 30px;
+    background-color: rgb(255, 255, 255, 0.6);
+    color: var(--primary-color);
+    font-size: 0.6rem;
+}
+
+.form-field select:focus {
+    outline: none;
+    box-shadow: 2px 2px 8px rgba(255, 255, 255, 0.4);
+}
+
+.form-field option:checked {
+    background-color: var(--secondary-color);
+    color: var(--tertiary-color);
+}
+
+.form-field textarea {
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    border: 1px solid var(--tertiary-color);
+    padding: 10px 30px;
+    background-color: rgb(255, 255, 255, 0.6);
+    color: var(--primary-color);
+    font-size: 0.6rem;
+}
+
+.form-field textarea:focus {
+    outline: none;
+    box-shadow: 2px 2px 8px rgba(255, 255, 255, 0.4);
+}
+
+
+
 div.submit {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: start;
+    gap: 30px;
     margin-bottom: 20px;
+}
+
+input[type="file"] {
+    width: 100%;
+    height: 60px;
+    border-radius: 30px;
+    border: none;
+    padding: 10px 30px;
+    background-color: rgb(255, 255, 255, 0.6);
+    color: var(--primary-color);
+    font-size: 0.6rem;
 }
 
 input[type="submit"] {
@@ -73,6 +127,31 @@ input[type="submit"]:hover {
     text-decoration: underline;
 }
 
+.delete-query {
+    width: 100%;
+}
+
+.delete-query .query {
+    color: var(--primary-color);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.delete-query .details {
+    color: var(--tertiary-color);
+    padding: 20px;
+    font-size: 0.7rem;
+    margin-bottom: 20px;
+}
+
+.details p a {
+    text-decoration: none;
+    color: var(--tertiary-color);
+}
+
+.details p a:hover {
+    text-decoration: underline;
+}
 
 
 /* ----------------------------------- MEDIA QUERIES -------------------------------- */
@@ -80,7 +159,7 @@ input[type="submit"]:hover {
 /* ---------------------------------------------------------------------------------- */
 
 /* TAB */
-@media screen and (max-width: 1024px) {
+/* @media screen and (max-width: 1024px) {
     form {
         width: 100%;
         height: 55%;
@@ -90,7 +169,7 @@ input[type="submit"]:hover {
     form .title-container {
         width: 100%;
     }
-}
+} */
 
 
 /* ---------------------------------------------------------------------------------- */
@@ -98,7 +177,7 @@ input[type="submit"]:hover {
 /* ---------------------------------------------------------------------------------- */
 
 /* MOBILE */
-@media screen and (max-width: 540px) {
+/* @media screen and (max-width: 540px) {
     form {
         width: 100%;
         height: 55%;
@@ -108,4 +187,4 @@ input[type="submit"]:hover {
     form .title-container {
         width: 100%;
     }
-}
+} */

@@ -1,0 +1,89 @@
+#admin {
+    height: 100vh;
+    width: 100%;
+    padding: 0 200px 0 0;
+    background-color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    overflow: hidden;
+}
+
+.list-container {
+    background-color: var(--primary-color);
+    width: 70%;
+    height: 100%;
+    overflow-y: auto;
+    padding: 100px 100px 0 100px;
+}
+
+.list-container .list {
+    background-color: var(--secondary-color);
+    width: 100%;
+    padding: 10px 40px;
+    font-size: 0.6rem;
+    border-radius: 20px;
+    box-shadow: var(--default-box-shadow);
+    margin-bottom: 20px;
+    color: var(--tertiary-color);
+    /* overflow: hidden;
+    text-overflow: ellipsis; */
+}
+
+.list-container h1 {
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.list-container .no-rows {
+    color: var(--tertiary-color);
+    font-size: 0.7rem;
+    text-align: center;
+    margin: 200px 0;
+}
+
+.list .actions {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 40px;
+}
+
+.list .actions a {
+    text-decoration: none;
+    font-size: 0.5rem;
+    color: var(--primary-color);
+}
+
+.list .actions a:hover {
+    font-weight: bold;
+}
+
+.list p a {
+    text-decoration: none;
+    color: var(--tertiary-color);
+}
+
+.list p a:hover {
+    text-decoration: underline;
+}
+
+.list .picture-container {
+    height: 80px;
+    width: 100%;
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.picture-container img {
+    object-fit: cover;
+    height: 100%;
+    width: 10%;
+}

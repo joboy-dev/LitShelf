@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS `LitShelfDB`.`User` (
   `name` VARCHAR(200) NOT NULL,
   `email` VARCHAR(200) NOT NULL,
   `password` VARCHAR(80) NOT NULL,
-  `profile_picture` VARCHAR(300) NULL DEFAULT 'https://img.freepik.com/free-psd/3d-icon-social-media-app_23-2150049569.jpg?size=626&ext=jpg&ga=GA1.1.163047648.1692182630&semt=ais',
+  `profile_picture` VARCHAR(300) NOT NULL DEFAULT 'https://img.freepik.com/free-psd/3d-icon-social-media-app_23-2150049569.jpg?size=626&ext=jpg&ga=GA1.1.163047648.1692182630&semt=ais',
   PRIMARY KEY (`id`),
   UNIQUE INDEX `email_UNIQUE` (`email` ASC))
 ENGINE = InnoDB;
@@ -34,8 +34,20 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `LitShelfDB`.`Author` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `author_name` VARCHAR(200) NOT NULL,
-  `author_picture` VARCHAR(200) NULL DEFAULT 'https://img.freepik.com/free-psd/3d-icon-social-media-app_23-2150049569.jpg?size=626&ext=jpg&ga=GA1.1.163047648.1692182630&semt=ais',
-  PRIMARY KEY (`id`))
+  `author_picture` VARCHAR(200) NOT NULL DEFAULT 'https://img.freepik.com/free-psd/3d-icon-social-media-app_23-2150049569.jpg?size=626&ext=jpg&ga=GA1.1.163047648.1692182630&semt=ais',
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `author_name_UNIQUE` (`author_name` ASC))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `LitShelfDB`.`Genre`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `LitShelfDB`.`Genre` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `genre_name` VARCHAR(200) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `name_UNIQUE` (`genre_name` ASC))
 ENGINE = InnoDB;
 
 
@@ -45,17 +57,23 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `LitShelfDB`.`Book` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `book_name` VARCHAR(200) NOT NULL,
-  `description` VARCHAR(3000) NULL DEFAULT 'No description available.',
-  `genre` VARCHAR(200) NOT NULL,
+  `description` VARCHAR(3000) NOT NULL DEFAULT 'No description available.',
   `quantity_available` INT NOT NULL,
-  `cover_picture` VARCHAR(300) NULL DEFAULT 'https://img.freepik.com/free-photo/image-icon-front-side-white-background_187299-40166.jpg?size=626&ext=jpg&ga=GA1.1.163047648.1692182630&semt=ais',
+  `cover_picture` VARCHAR(300) NOT NULL DEFAULT 'https://img.freepik.com/free-photo/image-icon-front-side-white-background_187299-40166.jpg?size=626&ext=jpg&ga=GA1.1.163047648.1692182630&semt=ais',
   `author_id` INT NOT NULL,
+  `genre_id` INT NOT NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_author_id_idx` (`author_id` ASC),
+  INDEX `fk_genre_id_idx` (`genre_id` ASC),
   CONSTRAINT `fk_author_id`
     FOREIGN KEY (`author_id`)
     REFERENCES `LitShelfDB`.`Author` (`id`)
     ON DELETE CASCADE
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_genre_id`
+    FOREIGN KEY (`genre_id`)
+    REFERENCES `LitShelfDB`.`Genre` (`id`)
+    ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
