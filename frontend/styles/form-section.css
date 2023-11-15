@@ -43,7 +43,7 @@
 /* MOBILE */
 @media screen and (max-width: 540px) {
     #form-section {
-        height: 155vh;
+        height: 120vh;
         flex-direction: column;
         gap: 0;
     }

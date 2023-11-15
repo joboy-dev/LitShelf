@@ -22,12 +22,12 @@
                 $_SESSION['email'] = $user['email'];
                 $_SESSION['name'] = $user['name'];
                 $_SESSION['profile_picture'] = $user['profile_picture'];
-
-                $successMessage = "Welcome" . $_SESSION['email'];
-
+                
                 // Redirect to home page
                 header('Location: /');
-                exit;
+
+                $successMessage = "Welcome" . $_SESSION['email'];
+                // exit;
             } else {
                 $errorMessage = 'Password is incorrect. Try again.';
             }

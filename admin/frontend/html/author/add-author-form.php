@@ -1,5 +1,5 @@
 <?php
-    require 'backend/author/add_author.php';
+    require_once 'backend/author/add_author.php';
     ob_start();
 ?>
 
@@ -31,6 +31,6 @@
 
 <?php
     $form = ob_get_clean();
-    include 'authors-page.php';
+    include_once 'authors-page.php';
 ?>
 

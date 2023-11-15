@@ -34,13 +34,29 @@
     // LIBRARY
     else if ($path === "/library") {
         protectRoute('frontend/html/library/library-page.php');
-    }  elseif (preg_match('/\/library\/book\?id=\d+/', $path)) {
+    } elseif (preg_match('/\/library\/book\?id=\d+/', $path)) {
         // The URL matches the expected pattern
         protectRoute("frontend/html/library/book-detail-page.php");
         exit;
+    } else if ($path === "/borrowed-books") {
+        protectRoute('frontend/html/library/borrowed-books-page.php');
+    } else if ($path === "/filtered-books") {
+        protectRoute('frontend/html/library/filtered-books-page.php');
     } 
-
-    // BORROWED BOOKS
+    // Filtering in Library
+    elseif (preg_match('/\/library\/filter\?genre=\d+/', $path)) {
+        // The URL matches the expected pattern
+        protectRoute("frontend/html/library/filtered-books-page.php");
+        exit;
+    } elseif (preg_match('/\/library\/filter\?author=\d+/', $path)) {
+        // The URL matches the expected pattern
+        protectRoute("frontend/html/library/filtered-books-page.php");
+        exit;
+    } elseif (preg_match('/\/library\/filter\?genre=\d+&author=\d+$/', $path)) {
+        // The URL matches the expected pattern
+        protectRoute("frontend/html/library/filtered-books-page.php");
+        exit;
+    } 
 
     // ADMIN PAGE
     else if ($path === "/admin") {

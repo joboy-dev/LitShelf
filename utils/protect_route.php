@@ -1,7 +1,7 @@
 <?php
     function protectRoute($route) {
         if (isset($_SESSION['user_id'])) {
-            include $route;
+            include_once $route;
             exit;
         } else {
             // Redirect to login page
@@ -13,7 +13,7 @@
 
     function protectAdminRoute($route) {
         if (isset($_SESSION['admin_id'])) {
-            include $route;
+            include_once $route;
             exit;
         } else {
             // Redirect to admin login page

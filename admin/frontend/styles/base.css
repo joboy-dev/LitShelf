@@ -21,6 +21,19 @@
     }
 }
 
+@keyframes slideDownOpacityAnimation {
+    0% {
+        /* visibility: hidden; */
+        opacity: 0;
+        transform: translateY(-20px); /* Move element up initially */
+    }
+    100% {
+        /* visibility: visible; */
+        opacity: 1;
+        transform: translateY(0); /* Move element down to its original position */
+    }
+}
+
 
 /* -------------------------------------------------------------------------- */
 /* -------------------------------------------------------------------------- */

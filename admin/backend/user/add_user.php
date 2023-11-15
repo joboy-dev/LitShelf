@@ -1,7 +1,7 @@
 <?php
-    require '../utils/conn.php';
-    include '../utils/password_check.php';
-    include '../utils/upload_image.php';
+    require_once '../utils/conn.php';
+    include_once '../utils/password_check.php';
+    include_once '../utils/upload_image.php';
 
     $errorMessage = null;
     $successMessage = null;

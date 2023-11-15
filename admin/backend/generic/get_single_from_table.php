@@ -1,6 +1,4 @@
 <?php
-    require '../utils/conn.php';
-
     function getSingleFromTable($tableName, int $id) {
         require '../utils/conn.php';
 

@@ -1,6 +1,6 @@
 <?php
-    require 'backend/author/edit_author.php';
-    require 'backend/generic/get_single_from_table.php';
+    require_once 'backend/author/edit_author.php';
+    require_once 'backend/generic/get_single_from_table.php';
 
     // Get id from url
     $id = $_GET['id'];
@@ -45,6 +45,6 @@
 
 <?php
     $form = ob_get_clean();
-    include 'authors-page.php';
+    include_once 'authors-page.php';
 ?>
 

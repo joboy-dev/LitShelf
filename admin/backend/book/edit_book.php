@@ -3,8 +3,8 @@
     $successMessage = null;
 
     if (isset($_POST["submit"])) {
-        require '../utils/conn.php';
-        require '../utils/upload_image.php';
+        require_once '../utils/conn.php';
+        require_once '../utils/upload_image.php';
 
         // Get id of selected user from url
         $id = $_GET['id'];
@@ -38,11 +38,11 @@
                 }
             } else {
                 // Upload file path into database and update book details
-                $editBookQuery = "UPDATE `book` SET `book_name`='$name', `description`='$description', `coverPicture`='$uploadFileResult', `quantity_available`='$quantity', `author_id`='$author', `genre_id`='$genre' WHERE `id`='$id'";
+                $editBookQuery = "UPDATE `book` SET `book_name`='$name', `description`='$description', `cover_picture`='$uploadFileResult', `quantity_available`='$quantity', `author_id`='$author', `genre_id`='$genre' WHERE `id`='$id'";
 
                 if (mysqli_query($conn, $editBookQuery)) {
                     header('Location: /admin/books');
-                    $successMessage = 'New book added';
+                    $successMessage = 'Book edited';
                     exit();
                 } else {
                     $errorMessage = 'An error occured while adding book';

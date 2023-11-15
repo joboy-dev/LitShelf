@@ -1,5 +1,5 @@
 <?php
-    require 'backend/user/add_user.php';
+    require_once 'backend/user/add_user.php';
     ob_start();
 ?>
 

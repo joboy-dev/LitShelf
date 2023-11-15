@@ -1,7 +1,7 @@
 <!-- HEADER -->
 <?php
     // Import script to process login
-    require 'backend/login.php'; 
+    require_once 'backend/login.php'; 
     $pageTitle = 'Login';
     ob_start();
 ?>
@@ -26,7 +26,7 @@
 <section id="form-section">
     <!-- Display messages -->
     <?php
-        include '../utils/display_message.php';
+        include_once '../utils/display_message.php';
         displayMessage();
     ?>
 
@@ -55,5 +55,5 @@
 
 <?php
     $content = ob_get_clean();
-    include 'base.php';
+    include_once 'base.php';
 ?>

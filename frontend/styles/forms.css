@@ -105,33 +105,6 @@ input[type="submit"]:hover {
     text-decoration: underline;
 }
 
-/* FILTER FORM */
-.filter-form-container {
-    height: 100px;
-    display: flex;
-    align-items: start;
-    justify-content: start;
-}
-
-form.filter-form {
-    display: flex;
-    align-items: end;
-    justify-content: end;
-    gap: 40px;
-    width: 70%;
-    height: 120px;
-}
-
-form.filter-form .form-field{
-    width: 100%;
-}
-
-form.filter-form .submit{
-    width: 100%;
-}
-
-
-
 /* ----------------------------------- MEDIA QUERIES -------------------------------- */
 /* ---------------------------------------------------------------------------------- */
 /* ---------------------------------------------------------------------------------- */
@@ -147,12 +120,6 @@ form.filter-form .submit{
     form .title-container {
         width: 100%;
     }
-
-    form.filter-form {
-        width: 100%;
-        gap: 10px;
-        padding: 0;
-    }
 }
 
 
@@ -164,8 +131,9 @@ form.filter-form .submit{
 @media screen and (max-width: 540px) {
     form {
         width: 100%;
-        height: 55%;
+        height: 60%;
         padding: 20px;
+        overflow-y: auto;
     }
 
     form .title-container {

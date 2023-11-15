@@ -1,6 +1,6 @@
 <?php
-    require 'backend/book/add_book.php';
-    require 'backend/generic/get_all_from_table.php';
+    require_once 'backend/book/add_book.php';
+    require_once 'backend/generic/get_all_from_table.php';
 
     $genres = getAllFromTable('genre');
     $authors = getAllFromTable('author');

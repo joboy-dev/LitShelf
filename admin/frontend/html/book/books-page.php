@@ -1,7 +1,7 @@
 <!-- HEADER -->
 <?php
-    require 'backend/generic/get_single_from_table.php'; 
-    // require 'backend/generic/get_all_from_table.php'; 
+    require_once 'backend/generic/get_single_from_table.php'; 
+    require_once 'backend/generic/get_all_from_table.php'; 
     
     $books = getAllFromTable('book');
     $pageTitle = 'Books';
@@ -14,7 +14,7 @@
 
 <?php
     $styles = ob_get_clean();
-    ?>
+?>
 
 <!-- ---------------------------------------------------------------------------------------------------- -->
 <!-- ---------------------------------------------------------------------------------------------------- -->
@@ -55,12 +55,12 @@
                     <p><b>Description: </b><?php echo $book['description']?></p>
                     <p><b>Quantity Available: </b><?php echo $book['quantity_available']?></p>
                     <p>
-                        <b>Genre: </b>id-<?php echo $book['genre_id']?>
-                        - <?php echo $genre['genre_name']?>
+                        <b>Genre: </b>
+                        <?php echo $genre['genre_name']?> <b>(id- <?php echo $book['genre_id']?>)</b>
                     </p>
                     <p>
-                        <b>Author: </b>id-<?php echo $book['author_id']?>
-                        - <?php echo $author['author_name']?>
+                        <b>Author: </b>
+                        <?php echo $author['author_name']?> <b>(id- <?php echo $book['author_id']?>)</b>
                     </p>
 
                     <div class="picture-container">

@@ -133,15 +133,19 @@ input[type="submit"]:hover {
 
 .delete-query .query {
     color: var(--primary-color);
-    font-size: 1rem;
+    font-size: 0.7rem;
     font-weight: bold;
 }
 
 .delete-query .details {
     color: var(--tertiary-color);
     padding: 20px;
-    font-size: 0.7rem;
+    font-size: 0.6rem;
     margin-bottom: 20px;
+}
+
+.details p b {
+    color: var(--primary-color);
 }
 
 .details p a {

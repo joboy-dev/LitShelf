@@ -3,7 +3,7 @@
     $successMessage = null;
 
     if (isset($_POST["submit"])) {
-        require '../utils/conn.php';
+        require_once '../utils/conn.php';
 
         // Get id of selected user from url
         $id = $_GET['id'];

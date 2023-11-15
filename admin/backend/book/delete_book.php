@@ -1,5 +1,5 @@
 <?php
-    require '../utils/conn.php';
+    require_once '../utils/conn.php';
 
     $errorMessage = null;
     $successMessage = null;

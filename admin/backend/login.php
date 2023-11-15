@@ -4,7 +4,7 @@
     $successMessage = null;
 
     if (isset($_POST['submit'])) {
-        require '../utils/conn.php';
+        require_once '../utils/conn.php';
 
         $email = htmlspecialchars($_POST['email']);
         $password = htmlspecialchars($_POST['password']);

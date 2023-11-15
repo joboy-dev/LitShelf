@@ -64,7 +64,7 @@
         var menuIcon = document.querySelector('.menu-icon');
         var cancelIcon = document.querySelector('.cancel-icon');
         var navItems =document.querySelector('.nav-items');
-        var main =document.querySelector('main');
+        // var main =document.querySelector('main');
 
         function openNavbar() {
             // toggle menu and cancel icons
@@ -87,7 +87,7 @@
         menuIcon.addEventListener('click', openNavbar);
         cancelIcon.addEventListener('click', closeNavbar);
 
-        main.addEventListener('click', closeNavbar)
+        // main.addEventListener('click', closeNavbar)
     </script>
 </body>
 </html>

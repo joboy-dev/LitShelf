@@ -1,6 +1,6 @@
 <?php
-    require 'backend/genre/delete_genre.php';
-    require 'backend/generic/get_single_from_table.php';
+    require_once 'backend/genre/delete_genre.php';
+    require_once 'backend/generic/get_single_from_table.php';
 
     // Get id from url
     $id = $_GET['id'];
@@ -40,6 +40,6 @@
 
 <?php
     $form = ob_get_clean();
-    include 'genres-page.php';
+    include_once 'genres-page.php';
 ?>
 

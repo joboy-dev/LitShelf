@@ -3,8 +3,8 @@
     $successMessage = null;
 
     if (isset($_POST["submit"])) {
-        require '../utils/conn.php';
-        require '../utils/upload_image.php';
+        require_once '../utils/conn.php';
+        require_once '../utils/upload_image.php';
 
         $id = $_GET['id'];
         $name = htmlspecialchars($_POST['name']);

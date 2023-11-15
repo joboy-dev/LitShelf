@@ -27,6 +27,7 @@
     box-shadow: var(--default-box-shadow);
     margin-bottom: 20px;
     color: var(--tertiary-color);
+    animation: slideDownOpacityAnimation 2s ease;
     /* overflow: hidden;
     text-overflow: ellipsis; */
 }
@@ -70,6 +71,10 @@
 
 .list p a:hover {
     text-decoration: underline;
+}
+
+.list p b {
+    color: var(--primary-color);
 }
 
 .list .picture-container {

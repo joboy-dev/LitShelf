@@ -1,6 +1,6 @@
 <?php
-    require '../utils/conn.php';
-    require '../utils/upload_image.php';
+    require_once '../utils/conn.php';
+    require_once '../utils/upload_image.php';
 
     $errorMessage = null;
     $successMessage = null;

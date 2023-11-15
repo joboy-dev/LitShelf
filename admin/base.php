@@ -18,11 +18,6 @@
         <div class="container">
             <a class="logo" href="/admin"><img src="/frontend/assets/images/logo.png" alt="logo"></a>
 
-            <!-- Burger icon -->
-            <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button> -->
-
             <!-- Nav Items -->
             <div class="nav-items">
                 <?php if(isset($_SESSION['admin_id'])): ?>
@@ -30,7 +25,8 @@
                     <a class="nav-link <?php echo $pageTitle == 'Books' ? 'active' : '' ?>" href="/admin/books">Books</a>
                     <a class="nav-link <?php echo $pageTitle == 'Authors' ? 'active' : '' ?>" href="/admin/authors">Authors</a>
                     <a class="nav-link <?php echo $pageTitle == 'Genres' ? 'active' : '' ?>" href="/admin/genres">Genres</a>
-                    <a class="nav-link <?php echo $pageTitle == 'Borrowed' ? 'active' : '' ?>" href="admin//borrowed">Borrowed</a>
+                    <a class="nav-link <?php echo $pageTitle == 'Borrowed Books' ? 'active' : '' ?>" href="/admin/borrowed-books">Borrowed Books</a>
+                    <a class="nav-link <?php echo $pageTitle == 'Book Requests' ? 'active' : '' ?>" href="/admin/book-requests">Book Requests</a>
                     <a class="nav-link <?php echo $pageTitle == 'Logout' ? 'active' : '' ?>" href="/admin/logout">Logout</a>
                 <?php else: ?>
                     <a class="nav-link <?php echo $pageTitle == 'Login' ? 'active' : '' ?>" href="/admin/login">Login</a>

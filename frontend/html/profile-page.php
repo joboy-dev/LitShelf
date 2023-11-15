@@ -72,6 +72,7 @@
 <script>
     var settingsContainer = document.querySelector('.settings-container')
     var allSettings = document.querySelector('.settings-links')
+    var main =document.querySelector('main');
 
     function openSettings() {
         allSettings.classList.remove('none');

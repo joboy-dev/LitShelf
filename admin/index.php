@@ -1,16 +1,16 @@
 <?php
-    include '../utils/protect_route.php';
+    include_once '../utils/protect_route.php';
 
     session_start();
 
     // Determine which page to load based on the URL
     $path = $_SERVER['REQUEST_URI'];
 
-    // include '../utils/display_message.php';
+    // include_once '../utils/display_message.php';
     // displayMessage();
 
     if ($path === '/admin') {
-        include 'frontend/html/login-form.php';
+        include_once 'frontend/html/login-form.php';
         exit;
     } 
     
@@ -68,14 +68,36 @@
         // The URL matches the expected pattern
         protectAdminRoute("frontend/html/genre/delete-genre-form.php");
         exit;
-    } elseif ($path === '/admin/borrowed') {
-        protectAdminRoute('frontend/html/borrowed/borrowed-page.php');
+    } 
+    
+    // BORROW
+    elseif ($path === '/admin/book-requests') {
+        protectAdminRoute('frontend/html/borrow/book-requests-page.php');
         exit;
-    } elseif ($path === '/admin/logout') {
+    } elseif (preg_match('/\/admin\/book-requests\/approve\?id=\d+&book_id=\d+$/', $path)) {
+        // The URL matches the expected pattern
+        protectAdminRoute("frontend/html/borrow/approve-request-form.php");
+        exit;
+    } 
+
+    // RETURN
+    elseif ($path === '/admin/borrowed-books') {
+        protectAdminRoute('frontend/html/borrow/borrowed-books-page.php');
+        exit;
+    } elseif (preg_match('/\/admin\/borrowed-books\/return\?id=\d+&book_id=\d+$/', $path)) {
+        // The URL matches the expected pattern
+        protectAdminRoute("frontend/html/borrow/mark-as-returned-form.php");
+        exit;
+    } 
+
+    elseif ($path === '/admin/logout') {
         protectAdminRoute('backend/logout.php');
         exit;
-    } else {
+    }
+    
+    // PAGE NOT FOUND
+    else {
         echo "<h1>Page not Found</h1>";
         exit;
-    }
+    } 
 ?>

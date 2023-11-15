@@ -1,6 +1,6 @@
 <?php
-    require 'backend/book/delete_book.php';
-    require 'backend/generic/get_single_from_table.php';
+    require_once 'backend/book/delete_book.php';
+    require_once 'backend/generic/get_single_from_table.php';
     
     // Get id from url
     $id = $_GET['id'];

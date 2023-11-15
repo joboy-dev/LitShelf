@@ -1,7 +1,10 @@
 
 <!-- HEADER -->
 <?php
-    require 'backend/generic/get_single_from_table.php';
+    require_once 'backend/generic/get_single_from_table.php';
+
+    // import script to process borrow request
+    require_once 'backend/library/make_borrow_request.php';
 
     $id = $_GET['id'];
 
@@ -52,7 +55,7 @@
             <div class="author-picture">
                 <img src="<?php echo $bookAuthor['author_picture'] ?>" alt="book pic">
             </div>
-            <p><?php echo $bookAuthor['author_name']; ?></p><br>
+            <p><b><?php echo $bookAuthor['author_name']; ?></b></p><br>
         </div>
 
         <div class="other">
@@ -60,11 +63,12 @@
                 <img src="<?php echo $book['cover_picture'] ?>" alt="book pic">
             </div>
 
+            <p style="text-align:center; margin-bottom:10px;"><b>Book Genre:</b> <?php echo $bookGenre['genre_name']; ?></p>
             <?php if ($book['quantity_available'] ==0): ?>
-                <p>Sorry, this book is not available right now. Check back later</p>
-                <br><hr><br>
+                <p style="text-align:center;">Sorry, this book is not available right now. Check back later</p>
             <?php else:?>
                 <p style="text-align:center;"><b>Quantity Available:</b> <?php echo $book['quantity_available']; ?></p><br>
+
                 <form action="" method="post" class="request-form">
                     <div class="submit">
                         <input type="submit" name="submit" value="Request to borrow">

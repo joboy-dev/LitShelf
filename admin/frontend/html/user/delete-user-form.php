@@ -1,6 +1,6 @@
 <?php
-    require 'backend/user/delete_user.php';
-    require 'backend/generic/get_single_from_table.php';
+    require_once 'backend/user/delete_user.php';
+    require_once 'backend/generic/get_single_from_table.php';
 
     // Get id from url
     $id = $_GET['id'];
@@ -43,6 +43,6 @@
 
 <?php
     $form = ob_get_clean();
-    include 'users-page.php';
+    include_once 'users-page.php';
 ?>
 

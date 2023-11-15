@@ -1,6 +1,7 @@
 <?php
-    require 'backend/generic/get_single_from_table.php';
-    require 'backend/generic/get_all_from_table.php';
+    require_once 'backend/generic/get_single_from_table.php';
+    require_once 'backend/generic/get_all_from_table.php';
+    require_once 'backend/book/edit_book.php';
     
     // Get id from url
     $id = $_GET['id'];

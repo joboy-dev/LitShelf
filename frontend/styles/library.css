@@ -11,7 +11,7 @@
 }
 
 #library .breadcrumb {
-    height: 20%;
+    height: 30%;
     width: 100%;
     background-color: var(--primary-color);
     text-align: center;
@@ -20,6 +20,7 @@
     align-items: center;
     justify-content: center;
     padding: 0 20px;
+    margin: 20px 0;
     animation: scaleOpacityAnimation 2s ease;
 }
 
@@ -36,8 +37,12 @@
 
 .library-content {
     padding: 0 200px;
-    height: 75%;
+    height: 70%;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: start;
 }
 
 .all-books {
@@ -85,6 +90,13 @@
     margin-bottom: 30px;
 }
 
+.details .book-title {
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
 .book .details a:hover {
     text-decoration: underline;
 }
@@ -100,6 +112,113 @@
     height: 100%;
 }
 
+p.no-content {
+    font-weight: bold;
+    font-size: 0.7rem;
+    text-align: center;
+    color: var(--tertiary-color);
+}
+
+/* ---------------------------------------- */
+            /* FILTER FORM */
+/* ---------------------------------------- */
+
+.filter-form-container {
+    height: 100px;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    animation: slideDownOpacityAnimation 2s ease;
+}
+
+form.filter-form {
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    gap: 40px;
+    width: 70%;
+    height: 100%;
+}
+
+form.filter-form .fields {
+    display: flex;
+    align-items: end;
+    justify-content: start;
+    gap: 40px;
+    width: 100%;
+    height: 100%;
+}
+
+form.filter-form .form-field{
+    width: 100%;
+}
+
+.form-field label {
+    display: block;
+    font-size: 0.6rem;
+    color: var(--tertiary-color);
+    margin-bottom: 10px;
+}
+
+.form-field input {
+    width: 100%;
+    height: 60px;
+    border-radius: 30px;
+    border: none;
+    padding: 10px 30px;
+    background-color: rgb(255, 255, 255, 0.6);
+    color: var(--primary-color);
+    font-size: 0.6rem;
+}
+
+.form-field input:focus {
+    outline: none;
+    box-shadow: 2px 2px 8px rgba(255, 255, 255, 0.4);
+}
+
+.form-field select {
+    width: 100%;
+    height: 60px;
+    border-radius: 30px;
+    border: none;
+    padding: 10px 30px;
+    background-color: rgb(255, 255, 255, 0.6);
+    color: var(--primary-color);
+    font-size: 0.6rem;
+}
+
+.form-field select:focus {
+    outline: none;
+    box-shadow: 2px 2px 8px rgba(255, 255, 255, 0.4);
+}
+
+.form-field option:checked {
+    background-color: var(--secondary-color);
+    color: var(--tertiary-color);
+}
+
+form.filter-form .submit{
+    width: 100%;
+}
+
+input[type="submit"] {
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+    height: 60px;
+    width: 45%;
+    border-radius: 30px;
+    font-size: 0.6rem;
+    font-weight: bold;
+    border: none;
+    box-shadow: var(--default-box-shadow);
+}
+
+input[type="submit"]:hover {
+    box-shadow: none;
+    scale: 1.02;
+}
+
+
 
 /* ----------------------------------- MEDIA QUERIES -------------------------------- */
 /* ---------------------------------------------------------------------------------- */
@@ -111,8 +230,19 @@
         gap: 20px;
     }
 
+    #library .breadcrumb {
+        height: 30%;
+    }
+    
     .library-content {
         padding: 0 50px;
+        height: 65%;
+    }
+
+    form.filter-form {
+        width: 100%;
+        gap: 10px;
+        padding: 0;
     }
 }
 
@@ -124,15 +254,38 @@
 /* MOBILE */
 @media screen and (max-width: 540px) {
     #library {
+        height: 160vh;
         gap: 20px;
+    }
+
+    #library .breadcrumb {
+        height: 20%;
     }
 
     .library-content {
         padding: 0 20px;
+        justify-content: flex-start;
+        height: 80%;
     }
 
+    .all-books {
+        height: 90%;
+        padding-top: 20px;
+        overflow: auto;
+    }
+    
     .book .picture {
         display: none;
+    }
+
+    .filter-form-container {
+        margin-top: 40px;
+    }
+
+    form.filter-form {
+        flex-direction: column;
+        gap: 20px;
+        height: 100%;
     }
 }
 

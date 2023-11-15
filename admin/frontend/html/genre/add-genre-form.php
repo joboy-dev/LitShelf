@@ -1,5 +1,5 @@
 <?php
-    require 'backend/genre/add_genre.php';
+    require_once 'backend/genre/add_genre.php';
     ob_start();
 ?>
 
@@ -21,6 +21,6 @@
 
 <?php
     $form = ob_get_clean();
-    include 'genres-page.php';
+    include_once 'genres-page.php';
 ?>
 

@@ -1,6 +1,6 @@
 <!-- HEADER -->
 <?php
-    require 'backend/generic/get_all_from_table.php'; 
+    require_once 'backend/generic/get_all_from_table.php'; 
     $authors = getAllFromTable('author');
     
     $pageTitle = 'Authors';
@@ -27,7 +27,7 @@
 <section id="admin">
     <!-- Display messages -->
     <?php
-        include '../utils/display_message.php';
+        include_once '../utils/display_message.php';
         displayMessage();
     ?>
 
@@ -75,5 +75,5 @@
 
 <?php
     $content = ob_get_clean();
-    include 'base.php';
+    include_once 'base.php';
 ?>
