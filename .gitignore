@@ -1,11 +1,11 @@
-uploads/author/*.jpg
-uploads/author/*.jpeg
-uploads/author/*.png
+*/author/*.jpg
+*/author/*.jpeg
+*/author/*.png
 
-uploads/book/*.jpg
-uploads/book/*.jpeg
-uploads/book/*.png
+*/book/*.jpg
+*/book/*.jpeg
+*/book/*.png
 
-uploads/user/*.jpg
-uploads/user/*.jpeg
-uploads/user/*.png
+*/user/*.jpg
+*/user/*.jpeg
+*/user/*.png
