@@ -21,11 +21,10 @@ To run the LitShelf Online Library Management System on your local machine, foll
 
 1. Clone the repository: `git clone https://github.com/joboy-dev/LitShelf.git`
 2. Configure the database settings in `utils/conn.php`.
-3. Import the SQL schema from `backend/schema.sql` into your database.
+3. Import the SQL schema from `litshelf_schema.sql` into your database.
 4. Start your web server(xampp preferably).
-5. Add this path to environment variables on your PC: `C:\xampp\php`
-6. Run this command in your terminal to start the PHP Development server: `php -S localhost:8000`
-    8000 can be any port number of your choice.
+5. Add this path to environment variables on your PC: `C:\xampp\php`. `C:\xampp` should be the directory you installed xampp in.
+6. Run this command in your terminal to start the PHP Development server: `php -S localhost:8000`.8000 can be any port number of your choice.
 7. On your browser, enter `localhost:8000` in the search bar and the website will start up.
 
 ## Technologies Used
