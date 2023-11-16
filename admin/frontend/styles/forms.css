@@ -58,7 +58,8 @@ form {
 }
 
 .form-field textarea {
-    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
     height: 200px;
     border-radius: 10px;
     border: 1px solid var(--tertiary-color);
@@ -72,8 +73,6 @@ form {
     outline: none;
     box-shadow: 2px 2px 8px rgba(255, 255, 255, 0.4);
 }
-
-
 
 div.submit {
     display: flex;

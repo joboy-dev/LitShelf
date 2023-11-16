@@ -1,5 +1,3 @@
-
-
 # LitShelf Online Library Management System
 
 LitShelf is a web-based library management system that allows users to explore, discover, and immerse themselves in the world of books. It's designed to provide a seamless experience for managing book collections, borrowing, and staying informed about new books.

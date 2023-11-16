@@ -132,6 +132,18 @@ CREATE TABLE IF NOT EXISTS `LitShelfDB`.`Admin` (
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
+-- -----------------------------------------------------
+-- Table `LitShelfDB`.`Contact`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `LitShelfDB`.`Contact` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(200) NOT NULL,
+  `email` VARCHAR(200) NOT NULL,
+  `message` VARCHAR(5000) NOT NULL,
+  `date_sent` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB;
+
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;

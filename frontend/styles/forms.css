@@ -54,6 +54,23 @@ form {
     color: var(--tertiary-color);
 }
 
+.form-field textarea {
+    min-width: 100%;
+    max-width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    border: 1px solid var(--tertiary-color);
+    padding: 10px 30px;
+    background-color: rgb(255, 255, 255, 0.6);
+    color: var(--primary-color);
+    font-size: 0.6rem;
+}
+
+.form-field textarea:focus {
+    outline: none;
+    box-shadow: 2px 2px 8px rgba(255, 255, 255, 0.4);
+}
+
 div.submit {
     display: flex;
     align-items: center;

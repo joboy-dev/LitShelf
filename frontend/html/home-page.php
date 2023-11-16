@@ -1,18 +1,21 @@
 <!-- HEADER -->
 <?php
+    require_once 'backend/contact/process_contact_form.php';
+    
     $pageTitle = 'Home';
     ob_start();
 ?>
 
 <!-- Styles -->
 <link rel="stylesheet" href="<?php echo '/frontend/styles/home.css'; ?>">
+<link rel="stylesheet" href="<?php echo '/frontend/styles/forms.css'; ?>">
 
 <?php
     $styles = ob_get_clean();
 ?>
 
-<!-- ---------------------------------------------------------------------------------------------------- -->
-<!-- ---------------------------------------------------------------------------------------------------- -->
+<!-- -------------------------------------------------------------------------------------- -->
+<!-- -------------------------------------------------------------------------------------- -->
 
 <!-- CONTENT -->
 <?php
@@ -61,6 +64,35 @@
         <p class="feature-title">Get Updates</p>
         <p class="description">Stay in the loop with notifications on new arrivals and library events.</p>
     </div>
+</section>
+
+<section id="contact">
+    <form action="" method="post">
+        <div class="title-container">
+            <h1 class="title">Contact</h1>
+            <div class="line"></div><br>
+        </div>
+
+        <div class="form-field">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" placeholder="Enter your name" value="<?php echo isset($name) ? $name : '';?>" required>
+        </div>
+
+        <div class="form-field">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" placeholder="Ex. johndoe@gmail.com" value="<?php echo isset($email) ? $email : '';?>" required>
+        </div>
+
+        <div class="form-field">
+            <label for="message">Message </label>
+            <textarea name="message" id="message" maxlength="5000" required><?php echo isset($message) ? $message : '';?></textarea>
+        </div>
+        
+        <div class="submit">
+            <input type="submit" name="submit" value="Send Message">
+        </div>
+    </form>
+
 </section>
 
 <?php

@@ -196,7 +196,7 @@ footer p {
     min-width: 30%;
     box-shadow: var(--default-box-shadow);
     border-radius: 25px;
-    padding: 10px 20px;
+    padding: 20px;
     text-align: center;
     font-weight: bold;
     font-size: 0.6rem;
@@ -283,7 +283,7 @@ footer p {
 /* MOBILE */
 @media screen and (max-width: 540px) {
     :root {
-        --default-spacing: 20px 50px;
+        --default-spacing: 20px;
     }
 
     html {
@@ -298,7 +298,8 @@ footer p {
         position: absolute;
         height: 50px;
         right: 0;
-        width: 100%;
+        width: 90%;
+        margin: 0 20px;
     }
 }
 
