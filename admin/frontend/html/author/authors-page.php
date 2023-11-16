@@ -28,7 +28,7 @@
     <!-- Display messages -->
     <?php
         include_once '../utils/display_message.php';
-        displayMessage();
+        // displayMessage();
     ?>
 
     <!-- Check for authors in the database -->

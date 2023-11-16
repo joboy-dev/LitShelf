@@ -14,33 +14,42 @@
         // Upload file
         // $uploadFileResult = uploadImage($authorPicture, '../uploads/author');
         $uploadFileResult = uploadImageAdmin($authorPicture, 'author');
+
+        $authorNameCheckQuery = "SELECT * FROM `author` WHERE `author_name`='$name' AND `id`!='$id'";
+        $authorCheckResult = mysqli_query($conn, $authorNameCheckQuery);
         
         if ($uploadFileResult == 'too large') {
             $errorMessage = 'File too large';
         } elseif ($uploadFileResult == 'invalid') {
             $errorMessage = 'File has an invalid extension';
         } elseif ($uploadFileResult == 'no file') {
-            // Update author
-            $editAuthorQuery = "UPDATE `author` SET `author_name`='$name' WHERE `id`='$id'";
-
-            // Run query
-            if (mysqli_query($conn, $editAuthorQuery)) {
-                header('Location: /admin/authors');
-                $successMessage = 'Author updated';
-                exit();
+            if (mysqli_num_rows($authorCheckResult) > 0) {
+                $errorMessage = 'This author ia already in the database';
             } else {
-                $errorMessage = 'An error occured while updating author';
+                // Update author
+                $editAuthorQuery = "UPDATE `author` SET `author_name`='$name' WHERE `id`='$id'";
+    
+                // Run query
+                if (mysqli_query($conn, $editAuthorQuery)) {
+                    header('Location: /admin/authors');
+                    $successMessage = 'Author updated';
+                } else {
+                    $errorMessage = 'An error occured while updating author';
+                }
             }
         } else {
-             // Update author
-             $editAuthorQuery = "UPDATE `author` SET `author_name`='$name', `author_picture`='$uploadFileResult' WHERE `id`='$id'";
-            // Run query
-            if (mysqli_query($conn, $editAuthorQuery)) {
-                header('Location: /admin/authors');
-                $successMessage = 'Author updated';
-                exit();
-            } else {
-                $errorMessage = 'An error occured while updating author';
+            if (mysqli_num_rows($authorCheckResult) > 0) {
+                $errorMessage = 'This author ia already in the database';
+            } else { 
+                // Update author
+                $editAuthorQuery = "UPDATE `author` SET `author_name`='$name', `author_picture`='$uploadFileResult' WHERE `id`='$id'";
+                // Run query
+                if (mysqli_query($conn, $editAuthorQuery)) {
+                    header('Location: /admin/authors');
+                    $successMessage = 'Author updated';
+                } else {
+                    $errorMessage = 'An error occured while updating author';
+                }
             }
         }
     }

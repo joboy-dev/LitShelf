@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LitShelf- <?php echo $pageTitle ?></title>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
     <link rel="shortcut icon" href="/frontend/assets/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,6 +15,27 @@
     <?php echo $styles ?>
 </head>
 <body>
+    <?php
+        // include_once 'utils/display_message.php';
+        // displayMessage();
+    ?>
+
+    <?php if (isset($_SESSION['error'])): ?> 
+        <div class='message error'>
+            <p><?php echo $_SESSION['error']; ?></p>
+        </div>
+
+        <?php unset($_SESSION['error']); ?>
+
+    <?php elseif (isset($_SESSION['success'])): ?> 
+        <div class='message success'>
+            <p><?php echo $_SESSION['success']; ?></p>
+        </div>
+
+        <?php unset($_SESSION['success']); ?>
+
+    <?php endif?>
+
     <!-- NAVBAR -->
     <nav>
         <div class="container">
@@ -41,7 +64,9 @@
 
     <!-- MAIN CONTENT -->
     <main>
-        <?php echo $content ?>
+        <?php
+            echo $content 
+         ?>
     </main>
 
     <footer>
@@ -89,5 +114,6 @@
 
         // main.addEventListener('click', closeNavbar)
     </script>
+
 </body>
 </html>

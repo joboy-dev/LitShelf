@@ -34,9 +34,8 @@
                     // Store data in database
                     $signUpQuery = "INSERT into `user` (`name`, `email`, `password`) VALUES ('$name', '$email', '$passwordHash')";
                     if (mysqli_query($conn, $signUpQuery)) {
-                        header('Location: /login');
-                        $successMessage = 'Account created successfully';
-                        exit();
+                        // header('Location: /login');
+                        $successMessage = 'Account created successfully. You can now login.';
                     } else {
                         $errorMessage = 'An error occured while creating your account';
                     }

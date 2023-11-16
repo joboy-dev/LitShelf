@@ -10,8 +10,8 @@
     unset($_SESSION["email"]);
     unset($_SESSION["name"]);
 
+    $_SESSION['success'] = 'Logout successful';
     // Redirect the user to the login page or any other desired page
     header('Location: /login');
-    $_SESSION['success'] = 'Logout successful';
     exit;
 ?>

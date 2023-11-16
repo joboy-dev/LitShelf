@@ -1,7 +1,7 @@
 <!-- HEADER -->
 <?php
     require_once 'backend/contact/process_contact_form.php';
-    
+
     $pageTitle = 'Home';
     ob_start();
 ?>
@@ -26,8 +26,8 @@
 <section id="hero">
     <!-- Display messages -->
     <?php
-        include 'utils/display_message.php';
-        displayMessage();
+        // include 'utils/display_message.php';
+        // displayMessage();
     ?>
     
     <div class="hero-content">

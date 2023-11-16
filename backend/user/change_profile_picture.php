@@ -30,7 +30,6 @@
 
                 header('Location: /profile');
                 $successMessage = 'Profile picture updated';
-                exit();
             } else {
                 $errorMessage = 'An error occured while updating profile picture';
             }

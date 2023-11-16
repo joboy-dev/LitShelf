@@ -36,8 +36,8 @@
 <section id="book-details">
     <!-- Display messages -->
     <?php
-        include 'utils/display_message.php';
-        displayMessage();
+        // include 'utils/display_message.php';
+        // displayMessage();
     ?>
     
     <div class="breadcrumb">

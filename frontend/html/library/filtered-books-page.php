@@ -31,8 +31,8 @@
 <section id="library">
     <!-- Display messages -->
     <?php
-        include_once 'utils/display_message.php';
-        displayMessage();
+        // include_once 'utils/display_message.php';
+        // displayMessage();
     ?>
     
     <div class="breadcrumb">

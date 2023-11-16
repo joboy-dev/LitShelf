@@ -26,8 +26,8 @@
 <section id="form-section">
     <!-- Display messages -->
     <?php
-        include 'utils/display_message.php';
-        displayMessage();
+        // include_once 'utils/display_message.php';
+        // displayMessage();
     ?>
 
     <div class="hero-img">

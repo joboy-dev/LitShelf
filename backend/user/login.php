@@ -25,13 +25,13 @@
                 
                 // Redirect to home page
                 header('Location: /');
-
-                $successMessage = "Welcome" . $_SESSION['email'];
-                // exit;
+                $successMessage = "Welcome " . $_SESSION['email'];
             } else {
+                // header('Location: /login');
                 $errorMessage = 'Password is incorrect. Try again.';
             }
         } else {
+            // header('Location: /login');
             $errorMessage = 'This user does not exist.  Please check your email';
         }
     }

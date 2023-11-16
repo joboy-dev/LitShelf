@@ -11,24 +11,24 @@
         } 
         // filter by genre
         else if ($genre !== 'null'and $author === 'null') {
-            $_SESSION['success'] = 'Filtered books by genre';
             header("Location: /library/filter?genre=$genre");
+            $successMessage = 'Filtered books by genre';
         }
 
         // Filter by author
         else if ($genre === 'null'and $author !== 'null') {
-            $_SESSION['success'] = 'Filtered books by author';
             header("Location: /library/filter?author=$author");
+            $successMessage = 'Filtered books by author';
         }
 
         // Filter by both genre and author
         else {
-            $_SESSION['success'] = 'Filtered books by genre and author';
             header("Location: /library/filter?genre=$genre&author=$author");
+            $successMessage = 'Filtered books by genre and author';
         }
 
     }
 
     $_SESSION['error'] = $errorMessage;
-    // $_SESSION['success'] = $successMessage;
+    $_SESSION['success'] = $successMessage;
 ?>

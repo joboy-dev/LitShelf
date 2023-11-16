@@ -28,7 +28,6 @@
                 // Redirect to desired page
                 header("Location: /profile");
                 $successMessage = 'Profile updated successfully';
-                exit;
             } else {
                 $errorMessage = 'An error occured while trying to save changes.';
             }

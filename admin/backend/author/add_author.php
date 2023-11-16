@@ -34,7 +34,7 @@
                 if (mysqli_query($conn, $addAuthorQuery)) {
                     header('Location: /admin/authors');
                     $successMessage = 'New author added';
-                    exit();
+                    // exit();
                 } else {
                     $errorMessage = 'An error occured while adding author';
                 }
@@ -51,7 +51,7 @@
                 if (mysqli_query($conn, $addAuthorQuery)) {
                     header('Location: /admin/authors');
                     $successMessage = 'New author added';
-                    exit();
+                    // exit();
                 } else {
                     $errorMessage = 'An error occured while adding author';
                 }

@@ -27,12 +27,14 @@
 <section id="admin">
     <!-- Display messages -->
     <?php
-        include_once '../utils/display_message.php';
-        displayMessage();
+        // include_once '../utils/display_message.php';
+        // displayMessage();
     ?>
 
 
-<!-- Check for users in the database -->
+
+
+    <!-- Check for users in the database -->
     <div class="list-container">
         <h1>Users</h1>
         <?php if ($users->num_rows > 0): ?>

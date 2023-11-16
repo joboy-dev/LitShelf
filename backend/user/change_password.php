@@ -38,7 +38,6 @@
                         if (mysqli_query($conn, $changePasswordQuery)) {
                             $successMessage = 'Password updated successfully';
                             header("Location: /profile");
-                            exit;
                         } else {
                             $errorMessage = "An error occured while trying to save your new password. Please try again";
                         }
