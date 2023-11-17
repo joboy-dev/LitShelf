@@ -35,11 +35,20 @@
         // Process search form 
         if (isset($_POST['search'])) {
             include '../utils/conn.php';
-            $userEmail = htmlspecialchars($_POST['search-term']);
+            $searchTerm = htmlspecialchars($_POST['search-term']);
             
-            // Check for author
-            $checkQuery = "SELECT * FROM `author` WHERE `author_name`='$userEmail'";
-            $authors = mysqli_query($conn, $checkQuery);
+            // Check for user through email entered by user
+            $checkUserQuery = "SELECT * FROM `user` WHERE `email`='$searchTerm'";
+            $users = mysqli_query($conn, $checkUserQuery);
+
+            // Get the user object
+            foreach ($users as $user) {
+                // Check for the books borrowed by the user based on the user id
+                $userId = $user["id"];
+                $checkBorrowedBookQuery = "SELECT * FROM `borrow` WHERE `user_id`='$userId' AND `approved`=1 AND `returned`=0";
+
+                $borrowedBooks = mysqli_query($conn, $checkBorrowedBookQuery);
+            }
         }
     ?>
 
@@ -50,7 +59,7 @@
         <form action="" method="post" class="search-form">
             <div class="form-field">
                 <!-- <label for="email">Email</label> -->
-                <input type="email" name="search-term" id="search-term" placeholder="Search by user email" required>
+                <input type="email" name="search-term" id="search-term" placeholder="Search by user email" value="<?php echo isset($searchTerm) ? $searchTerm : ''; ?>" required>
             </div>
         
             <div class="submit">

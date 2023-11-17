@@ -31,11 +31,41 @@
     <?php
         // include_once '../utils/display_message.php';
         // displayMessage();
+
+        if (isset($_POST['search'])) {
+            include '../utils/conn.php';
+            $searchTerm = htmlspecialchars($_POST['search-term']);
+            
+            // Check for user through email entered by user
+            $checkUserQuery = "SELECT * FROM `user` WHERE `email`='$searchTerm'";
+            $users = mysqli_query($conn, $checkUserQuery);
+
+            // Get the user object
+            foreach ($users as $user) {
+                // Check for the books borrowed by the user based on the user id
+                $userId = $user["id"];
+                $checkBookRequestsQuery = "SELECT * FROM `borrow` WHERE `user_id`='$userId' AND `approved`=0";
+
+                $bookRequests = mysqli_query($conn, $checkBookRequestsQuery);
+            }
+        }
     ?>
 
     <!-- Check for book requests in the database -->
     <div class="list-container">
         <h1>Book Requests</h1>
+
+        <form action="" method="post" class="search-form">
+            <div class="form-field">
+                <!-- <label for="email">Email</label> -->
+                <input type="email" name="search-term" id="search-term" placeholder="Search by user email" value="<?php echo isset($searchTerm) ? $searchTerm : ''; ?>" required>
+            </div>
+        
+            <div class="submit">
+                <input type="submit" name="search" value="Search">
+            </div>
+        </form>
+
         <?php if ($bookRequests->num_rows > 0): ?>
             <!-- Loop through the list of book requests -->
             <?php foreach ($bookRequests as $bookRequest): ?>

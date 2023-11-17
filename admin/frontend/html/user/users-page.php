@@ -33,10 +33,10 @@
         // Process search form 
         if (isset($_POST['search'])) {
             include '../utils/conn.php';
-            $searchEmail = htmlspecialchars($_POST['search-term']);
+            $searchTerm = htmlspecialchars($_POST['search-term']);
             
             // Check for user
-            $checkQuery = "SELECT * FROM `user` WHERE `email`='$searchEmail'";
+            $checkQuery = "SELECT * FROM `user` WHERE `email`='$searchTerm'";
             $users = mysqli_query($conn, $checkQuery);
         }
     ?>
@@ -48,7 +48,7 @@
         <form action="" method="post" class="search-form">
             <div class="form-field">
                 <!-- <label for="email">Email</label> -->
-                <input type="email" name="search-term" id="search-term" placeholder="Search by email" required>
+                <input type="email" name="search-term" id="search-term" placeholder="Search by email" value="<?php echo isset($searchTerm) ? $searchTerm : ''; ?>" required>
             </div>
         
             <div class="submit">

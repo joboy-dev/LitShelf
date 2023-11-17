@@ -15,8 +15,8 @@
     $styles = ob_get_clean();
 ?>
 
-<!-- ---------------------------------------------------------------------------------------------------- -->
-<!-- ---------------------------------------------------------------------------------------------------- -->
+<!-- --------------------------------------------------------------------------------------- -->
+<!-- --------------------------------------------------------------------------------------- -->
 
 <!-- CONTENT -->
 <?php
@@ -27,13 +27,35 @@
 <section id="admin">
     <!-- Display messages -->
     <?php
-        include_once '../utils/display_message.php';
+        // include_once '../utils/display_message.php';
         // displayMessage();
+
+        // Process search form 
+        if (isset($_POST['search'])) {
+            include '../utils/conn.php';
+            $searchTerm = htmlspecialchars($_POST['search-term']);
+            
+            // Check for author
+            $checkQuery = "SELECT * FROM `genre` WHERE `genre_name`='$searchTerm'";
+            $genres = mysqli_query($conn, $checkQuery);
+        }
     ?>
 
     <!-- Check for genres in the database -->
     <div class="list-container">
         <h1>Genres</h1>
+
+        <form action="" method="post" class="search-form">
+            <div class="form-field">
+                <!-- <label for="email">Email</label> -->
+                <input type="text" name="search-term" id="search-term" placeholder="Search by genre name" value="<?php echo isset($searchTerm) ? $searchTerm : ''; ?>" required>
+            </div>
+        
+            <div class="submit">
+                <input type="submit" name="search" value="Search">
+            </div>
+        </form>
+
         <?php if ($genres->num_rows > 0): ?>
             <!-- Loop through the list of genres -->
             <?php foreach ($genres as $genre): ?>
