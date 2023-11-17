@@ -29,12 +29,22 @@
     <!-- Display messages -->
     <?php
         include '../utils/display_message.php';
-        displayMessage();
+        // displayMessage();
     ?>
 
     <!-- Check for books in the database -->
     <div class="list-container">
         <h1>Books</h1>
+        <form action="" method="post" class="search-form">
+            <div class="form-field">
+                <!-- <label for="email">Email</label> -->
+                <input type="email" name="book-name" id="book-name" placeholder="Search by book name" required>
+            </div>
+        
+            <div class="submit">
+                <input type="submit" name="submit" value="Search">
+            </div>
+        </form>
         <?php if ($books->num_rows > 0): ?>
             <!-- Loop through the list of books -->
             <?php foreach ($books as $book): ?>

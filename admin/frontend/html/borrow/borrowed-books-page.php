@@ -29,13 +29,25 @@
 <section id="admin">
     <!-- Display messages -->
     <?php
-        include_once '../utils/display_message.php';
-        displayMessage();
+        // include_once '../utils/display_message.php';
+        // displayMessage();
     ?>
 
     <!-- Check for book requests in the database -->
     <div class="list-container">
         <h1>Borrowed Books</h1>
+
+        <form action="" method="post" class="search-form">
+            <div class="form-field">
+                <!-- <label for="email">Email</label> -->
+                <input type="email" name="email" id="email" placeholder="Search by email" required>
+            </div>
+        
+            <div class="submit">
+                <input type="submit" name="submit" value="Search">
+            </div>
+        </form>
+        
         <?php if ($borrowedBooks->num_rows > 0): ?>
             <!-- Loop through the list of book requests -->
             <?php foreach ($borrowedBooks as $borrowedBook): ?>

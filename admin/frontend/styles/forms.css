@@ -156,6 +156,22 @@ input[type="submit"]:hover {
     text-decoration: underline;
 }
 
+form.search-form {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 40px;
+}
+
+form.search-form .form-field {
+    width: 70%;
+}
+
+form.search-form .submit {
+    width: 30%;
+}
+
 
 /* ----------------------------------- MEDIA QUERIES -------------------------------- */
 /* ---------------------------------------------------------------------------------- */
