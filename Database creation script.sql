@@ -86,6 +86,7 @@ CREATE TABLE IF NOT EXISTS `LitShelfDB`.`Borrow` (
   `user_id` INT NOT NULL,
   `book_id` INT NOT NULL,
   `borrow_date` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `due_date` DATE NULL DEFAULT NULL,
   `approved` INT NOT NULL DEFAULT 0,
   `returned` INT NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`),

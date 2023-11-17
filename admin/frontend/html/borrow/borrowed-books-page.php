@@ -32,6 +32,17 @@
         // include_once '../utils/display_message.php';
         // displayMessage();
 
+        // Process due books form 
+        if (isset($_POST['due-books'])) {
+            include '../utils/conn.php';
+
+            $today = date('Y-m-d');
+
+            // Check for due books 
+            $checkDueBooksQuery = "SELECT * FROM `borrow` WHERE `due_date`='$today'";
+            $borrowedBooks = mysqli_query($conn, $checkDueBooksQuery);
+        }
+
         // Process search form 
         if (isset($_POST['search'])) {
             include '../utils/conn.php';
@@ -54,7 +65,15 @@
 
     <!-- Check for book requests in the database -->
     <div class="list-container">
-        <h1>Borrowed Books</h1>
+
+        <div class="head-container">
+            <h1>Borrowed Books</h1>
+            <form action="" method="post" class="search-form">
+                <div class="submit">
+                    <input type="submit" name="due-books" value="View Due Books">
+                </div>
+            </form>
+        </div>
 
         <form action="" method="post" class="search-form">
             <div class="form-field">
@@ -91,6 +110,7 @@
                     </p>
                     <p><b>User Email: </b><?php echo $user['email']?></p>
                     <p><b>Borrow Date: </b><?php echo $borrowedBook['borrow_date']?></p>
+                    <p><b>Due Date: </b><?php echo $borrowedBook['due_date']?></p>
                 </div> 
             <?php endforeach?>
         <?php else: ?>

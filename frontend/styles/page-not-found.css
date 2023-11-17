@@ -1,3 +1,94 @@
-body {
-    background-color: var(--primary-color);
+#page-not-found {
+    height: 100vh;
+    padding: 0 200px 0 0;
+    background-color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* overflow: auto; */
+    gap: 150px;
+}
+
+.hero-img {
+    width: 60%;
+    height: 100%;
+}
+
+.hero-img img {
+    object-fit: fill;
+}
+
+.page {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.page h1 {
+    font-size: 1.2rem;
+    color: var(--tertiary-color);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.page p {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+}
+
+/* ----------------------------------- MEDIA QUERIES -------------------------------- */
+/* ---------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------- */
+
+/* TAB */
+@media screen and (max-width: 1024px) {
+    #page-not-found {
+        height: 120vh;
+        flex-direction: column;
+        padding: 0;
+        gap: 0;
+        overflow: auto;
+    }
+    
+    .hero-img {
+        width: 100%;
+        height: 60%;
+        overflow: hidden;
+    }
+
+    .page {
+        width: 70%;
+        height: 40%;
+    }
+}
+
+
+/* ---------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------- */
+
+/* MOBILE */
+@media screen and (max-width: 540px) {
+    #page-not-found {
+        height: 100vh;
+        flex-direction: column;
+        gap: 0;
+        overflow: auto;
+    }
+
+    .hero-img {
+        width: 100%;
+        height: 60%;
+        overflow: hidden;
+    }
+
+    .page {
+        width: 100%;
+        height: 40%;
+    }
 }

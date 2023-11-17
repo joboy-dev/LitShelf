@@ -22,12 +22,14 @@
             if ($book['quantity_available'] == 0) {
                 $errorMessage = 'There are no more copies of this book available';
             } else {
+                // Set due date to be 14 days from current date
+                $dueDate = date('Y-m-d', strtotime('+14 days'));
+
                 // Approve the request
-                $approveRequestQuery = "UPDATE `borrow` SET `approved`=1 WHERE `id`='$borrowId'";
+                $approveRequestQuery = "UPDATE `borrow` SET `approved`=1, `due_date`='$dueDate' WHERE `id`='$borrowId'";
         
                 if (mysqli_query($conn, $approveRequestQuery)) {
                     // Update quantity of available books in database
-                    // $book = mysqli_fetch_assoc($bookResult);
                     $updatedQuantity = $book['quantity_available'] - 1;
                     
                     $updateBookQuantityQuery = "UPDATE `book` SET `quantity_available`='$updatedQuantity' WHERE `id`='$bookId'";

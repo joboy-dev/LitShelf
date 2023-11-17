@@ -1,19 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Not Found</title>
-    <link rel="shortcut icon" href="/frontend/assets/favicon.ico" type="image/x-icon">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,400;1,500;1,600;1,700;1,900&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="../styles/base.css">
-    <link rel="stylesheet" href="../styles/page-not-found.css">
-</head>
-<body>
-    <h1>Oops. Page not found</h1>
+<!-- HEADER -->
+<?php    
+    // Import script to process sign up
+    $pageTitle = 'None';
+    ob_start();
+?>
+
+<!-- Styles -->
+<link rel="stylesheet" href="/frontend/styles/page-not-found.css">
+
+<?php
+    $styles = ob_get_clean();
+?>
+
+<!-- ---------------------------------------------------------------------------------------------------- -->
+<!-- ---------------------------------------------------------------------------------------------------- -->
+
+<!-- CONTENT -->
+<?php
+    ob_start();
+?>
+
+<!-- Main Content -->
+<section id="page-not-found">
     
-</body>
-</html>
+    <div class="hero-img">
+        <img src="/frontend/assets/images/hero/404-page-hero.png" alt="hero-image">
+    </div>
+
+    <div class="page">
+        <h1>Oops! <br> Seems you're on the wrong page</h1>
+        <h3></h3>
+        <p>This page does not exist</p>
+
+        <a href="/" class="button">Go back home</a>
+        
+    </div>
+</section>
+
+<?php
+    $content = ob_get_clean();
+    include 'base.php';
+?>

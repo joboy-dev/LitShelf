@@ -10,6 +10,30 @@
     overflow: hidden;
 }
 
+.head-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 40px;
+}
+
+.head-container h1 {
+    width: 50%;
+}
+
+.head-container form {
+    width: 50%;
+}
+
+.head-container form div.submit {
+    width: 100%;
+}
+
+.head-container form input[tyoe="submit"] {
+    width: 100%;
+}
+
 .list-container {
     background-color: var(--primary-color);
     width: 70%;

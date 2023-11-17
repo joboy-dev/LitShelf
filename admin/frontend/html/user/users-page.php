@@ -27,9 +27,13 @@
 <section id="admin">
     <!-- Display messages -->
     <?php
-        // include_once '../utils/display_message.php';
+        include_once '../utils/display_message.php';
         // displayMessage();
+        
+        include_once '../utils/query_exception_catch.php';
 
+        $searchTerm = null;
+        
         // Process search form 
         if (isset($_POST['search'])) {
             include '../utils/conn.php';

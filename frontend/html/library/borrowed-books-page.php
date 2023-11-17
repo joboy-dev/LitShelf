@@ -66,6 +66,16 @@
                                 <b>Written by</b>
                                 <?php echo $bookAuthor['author_name']?>
                             </p>
+
+                            <?php if($borrow['due_date'] == date('Y-m-d')): ?>
+                                <p><b>Due for return</b></p>
+                            <?php else: ?>
+                                <p>
+                                    <b>Due date</b>
+                                    <?php echo $borrow['due_date']?>
+                                </p>
+                            <?php endif?>
+                            
                         </div>
                     </div>
                 <?php endforeach ?>
