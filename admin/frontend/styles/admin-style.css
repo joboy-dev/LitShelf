@@ -92,3 +92,8 @@
     height: 100%;
     width: 10%;
 }
+
+.search-form input[type="submit"] {
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+}
