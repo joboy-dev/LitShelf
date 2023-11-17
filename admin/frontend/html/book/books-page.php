@@ -30,6 +30,16 @@
     <?php
         include '../utils/display_message.php';
         // displayMessage();
+
+        // Process search form 
+        if (isset($_POST['search'])) {
+            include '../utils/conn.php';
+            $bookName = htmlspecialchars($_POST['search-term']);
+            
+            // Check for user
+            $checkQuery = "SELECT * FROM `book` WHERE `book_name`='$bookName'";
+            $books = mysqli_query($conn, $checkQuery);
+        }
     ?>
 
     <!-- Check for books in the database -->
@@ -38,13 +48,14 @@
         <form action="" method="post" class="search-form">
             <div class="form-field">
                 <!-- <label for="email">Email</label> -->
-                <input type="email" name="book-name" id="book-name" placeholder="Search by book name" required>
+                <input type="text" name="search-term" id="search-term" placeholder="Search by book name" required>
             </div>
         
             <div class="submit">
-                <input type="submit" name="submit" value="Search">
+                <input type="submit" name="search" value="Search">
             </div>
         </form>
+
         <?php if ($books->num_rows > 0): ?>
             <!-- Loop through the list of books -->
             <?php foreach ($books as $book): ?>
@@ -84,9 +95,7 @@
         <?php endif?>
     </div>
 
-    <?php 
-       echo $form;
-    ?>
+    <?php echo isset($form) ? $form : "<form></form>"; ?>
 
 </section>
 

@@ -31,6 +31,16 @@
     <?php
         // include_once '../utils/display_message.php';
         // displayMessage();
+
+        // Process search form 
+        if (isset($_POST['search'])) {
+            include '../utils/conn.php';
+            $userEmail = htmlspecialchars($_POST['search-term']);
+            
+            // Check for author
+            $checkQuery = "SELECT * FROM `author` WHERE `author_name`='$userEmail'";
+            $authors = mysqli_query($conn, $checkQuery);
+        }
     ?>
 
     <!-- Check for book requests in the database -->
@@ -40,11 +50,11 @@
         <form action="" method="post" class="search-form">
             <div class="form-field">
                 <!-- <label for="email">Email</label> -->
-                <input type="email" name="email" id="email" placeholder="Search by email" required>
+                <input type="email" name="search-term" id="search-term" placeholder="Search by user email" required>
             </div>
         
             <div class="submit">
-                <input type="submit" name="submit" value="Search">
+                <input type="submit" name="search" value="Search">
             </div>
         </form>
         

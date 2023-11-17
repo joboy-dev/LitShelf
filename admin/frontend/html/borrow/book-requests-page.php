@@ -29,8 +29,8 @@
 <section id="admin">
     <!-- Display messages -->
     <?php
-        include_once '../utils/display_message.php';
-        displayMessage();
+        // include_once '../utils/display_message.php';
+        // displayMessage();
     ?>
 
     <!-- Check for book requests in the database -->

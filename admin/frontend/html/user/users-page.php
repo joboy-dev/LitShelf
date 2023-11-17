@@ -27,23 +27,32 @@
 <section id="admin">
     <!-- Display messages -->
     <?php
-        include_once '../utils/display_message.php';
+        // include_once '../utils/display_message.php';
         // displayMessage();
+
+        // Process search form 
+        if (isset($_POST['search'])) {
+            include '../utils/conn.php';
+            $searchEmail = htmlspecialchars($_POST['search-term']);
+            
+            // Check for user
+            $checkQuery = "SELECT * FROM `user` WHERE `email`='$searchEmail'";
+            $users = mysqli_query($conn, $checkQuery);
+        }
     ?>
-
-
 
     <!-- Check for users in the database -->
     <div class="list-container">
         <h1>Users</h1>
+
         <form action="" method="post" class="search-form">
             <div class="form-field">
                 <!-- <label for="email">Email</label> -->
-                <input type="email" name="email" id="email" placeholder="Search by email" required>
+                <input type="email" name="search-term" id="search-term" placeholder="Search by email" required>
             </div>
         
             <div class="submit">
-                <input type="submit" name="submit" value="Search">
+                <input type="submit" name="search" value="Search">
             </div>
         </form>
 
@@ -76,9 +85,8 @@
         <?php endif?>
     </div>
 
-    <?php 
-       echo $form;
-    ?>
+    <?php echo isset($form) ? $form : "<form></form>"; ?>
+
 
 </section>
 

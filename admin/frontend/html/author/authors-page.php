@@ -29,11 +29,33 @@
     <?php
         include_once '../utils/display_message.php';
         // displayMessage();
+
+        // Process search form 
+        if (isset($_POST['search'])) {
+            include '../utils/conn.php';
+            $authorName = htmlspecialchars($_POST['search-term']);
+            
+            // Check for author
+            $checkQuery = "SELECT * FROM `author` WHERE `author_name`='$authorName'";
+            $authors = mysqli_query($conn, $checkQuery);
+        }
     ?>
 
     <!-- Check for authors in the database -->
     <div class="list-container">
         <h1>Authors</h1>
+
+        <form action="" method="post" class="search-form">
+            <div class="form-field">
+                <!-- <label for="email">Email</label> -->
+                <input type="text" name="search-term" id="search-term" placeholder="Search by author name" required>
+            </div>
+        
+            <div class="submit">
+                <input type="submit" name="search" value="Search">
+            </div>
+        </form>
+
         <?php if ($authors->num_rows > 0): ?>
             <!-- Loop through the list of authors -->
             <?php foreach ($authors as $author): ?>
